@@ -3,7 +3,7 @@
  * Plugin Name: Academia Library
  * Plugin URI: https://colorlib.com/wp/themes/academia/
  * Description: Adds a Course content type to the Academia theme — levels, durations, lesson counts, prices, instructors and ratings — plus a course browser that filters and sorts without reloading the page. Course content stays in your database if you change theme.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 6.6
  * Requires PHP: 7.4
  * Author: Colorlib
@@ -18,7 +18,10 @@
 
 defined( 'ABSPATH' ) || exit;
 
-const ACADEMIA_LIBRARY_VERSION = '1.0.0';
+const ACADEMIA_LIBRARY_VERSION = '1.0.1';
+
+/** Must match the host in the plugin's `Update URI` header, or core never calls the filter. */
+const ACADEMIA_LIBRARY_UPDATE_ENDPOINT = 'https://updates.colorlib.com/plugin/academia-library.json';
 
 /**
  * Where the plugin's own files live.
@@ -264,6 +267,85 @@ function academia_library_deactivate() {
 	flush_rewrite_rules();
 }
 register_deactivation_hook( __FILE__, 'academia_library_deactivate' );
+
+/**
+ * Updates, through the same first-class hook the theme uses.
+ *
+ * The plugin's header declares an `Update URI`, which is what makes WordPress
+ * call `update_plugins_{hostname}` during its normal check — but the header on
+ * its own does nothing. Without this filter the plugin would announce an update
+ * endpoint and then never offer an update, which is worse than not claiming one.
+ *
+ * @param array|false $update      Update data, or false.
+ * @param array       $plugin_data Plugin headers.
+ * @param string      $plugin_file Plugin file.
+ * @return array|false
+ */
+function academia_library_check_update( $update, $plugin_data, $plugin_file ) {
+	if ( $update || 'academia-library/academia-library.php' !== $plugin_file ) {
+		return $update;
+	}
+
+	// The theme's opt-out covers the plugin too: a site that has switched off
+	// update checks has switched them off for the product, not per file.
+	if ( ! apply_filters( 'academia_check_for_updates', true ) ) {
+		return $update;
+	}
+
+	$cached = get_site_transient( 'academia_library_update' );
+
+	if ( ! is_array( $cached ) ) {
+		/**
+		 * Filters the data sent with the plugin's update check.
+		 *
+		 * Mirrors the theme's payload, including the site identifier — a one-way
+		 * hash of the home URL salted with this install's own AUTH_SALT, so the
+		 * count is a count of sites and cannot be reversed into a URL. Return
+		 * only 'plugin' and 'version' to send the bare minimum.
+		 *
+		 * @param array $payload What will be sent.
+		 */
+		$payload = apply_filters(
+			'academia_library_update_payload',
+			array(
+				'plugin'    => 'academia-library',
+				'version'   => ACADEMIA_LIBRARY_VERSION,
+				'wp'        => get_bloginfo( 'version' ),
+				'php'       => PHP_MAJOR_VERSION . '.' . PHP_MINOR_VERSION,
+				'locale'    => get_locale(),
+				'multisite' => is_multisite() ? 1 : 0,
+				'site'      => substr( hash_hmac( 'sha256', home_url( '/' ), wp_salt( 'auth' ) ), 0, 32 ),
+			)
+		);
+
+		$response = wp_remote_get(
+			add_query_arg( $payload, ACADEMIA_LIBRARY_UPDATE_ENDPOINT ),
+			array( 'timeout' => 8 )
+		);
+
+		$cached = ( ! is_wp_error( $response ) && 200 === wp_remote_retrieve_response_code( $response ) )
+			? (array) json_decode( wp_remote_retrieve_body( $response ), true )
+			: array();
+
+		// A failure is cached briefly too, so a dead endpoint is not retried on
+		// every admin page load.
+		set_site_transient( 'academia_library_update', $cached, $cached ? 12 * HOUR_IN_SECONDS : HOUR_IN_SECONDS );
+	}
+
+	if ( empty( $cached['version'] ) || version_compare( $cached['version'], ACADEMIA_LIBRARY_VERSION, '<=' ) ) {
+		return $update;
+	}
+
+	return array(
+		'id'      => ACADEMIA_LIBRARY_UPDATE_ENDPOINT,
+		'slug'    => 'academia-library',
+		'plugin'  => $plugin_file,
+		'version' => $cached['version'],
+		'url'     => isset( $cached['url'] ) ? $cached['url'] : 'https://colorlib.com/wp/themes/academia/',
+		'package' => isset( $cached['package'] ) ? $cached['package'] : '',
+	);
+}
+add_filter( 'update_plugins_updates.colorlib.com', 'academia_library_check_update', 10, 3 );
 
 require_once academia_library_path() . 'admin.php';
 require_once academia_library_path() . 'filter.php';

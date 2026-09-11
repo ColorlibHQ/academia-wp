@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Academia 1.0.1\n"
+"Project-Id-Version: Academia 1.0.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/academia\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-11T13:01:01+00:00\n"
+"POT-Creation-Date: 2026-09-11T13:36:50+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: academia\n"
@@ -272,76 +272,76 @@ msgstr ""
 msgid "Courses will be listed here soon."
 msgstr ""
 
-#: inc/courses.php:796
+#: inc/courses.php:831
 #: patterns/sidebar.php:20
 msgid "Search"
 msgstr ""
 
-#: inc/courses.php:797
+#: inc/courses.php:832
 msgid "Course or subject"
 msgstr ""
 
-#: inc/courses.php:802
+#: inc/courses.php:837
 msgid "Subject"
 msgstr ""
 
-#: inc/courses.php:804
+#: inc/courses.php:839
 msgid "All subjects"
 msgstr ""
 
-#: inc/courses.php:816
+#: inc/courses.php:851
 msgid "Level"
 msgstr ""
 
-#: inc/courses.php:818
+#: inc/courses.php:853
 msgid "Any level"
 msgstr ""
 
-#: inc/courses.php:828
+#: inc/courses.php:863
 msgid "Newest first"
 msgstr ""
 
-#: inc/courses.php:829
+#: inc/courses.php:864
 msgid "A to Z"
 msgstr ""
 
-#: inc/courses.php:830
+#: inc/courses.php:865
 msgid "Price"
 msgstr ""
 
-#: inc/courses.php:831
+#: inc/courses.php:866
 msgid "Best rated"
 msgstr ""
 
-#: inc/courses.php:834
+#: inc/courses.php:869
 msgid "Sort by"
 msgstr ""
 
-#: inc/courses.php:845
+#: inc/courses.php:880
 msgid "Apply filters"
 msgstr ""
 
 #. translators: %s: number of courses.
-#: inc/courses.php:853
+#: inc/courses.php:888
 #, php-format
 msgid "%s course"
 msgid_plural "%s courses"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/courses.php:906
+#: inc/courses.php:941
 msgid "Course pages"
 msgstr ""
 
-#: inc/courses.php:929
+#: inc/courses.php:964
 msgid "Nothing matched those filters"
 msgstr ""
 
-#: inc/courses.php:930
+#: inc/courses.php:965
 msgid "Try a broader subject, or clear the search box."
 msgstr ""
 
-#: inc/courses.php:931
+#: inc/courses.php:966
 msgid "Clear all filters"
 msgstr ""
 

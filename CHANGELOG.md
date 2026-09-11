@@ -173,3 +173,25 @@ sound; its application was not.
   blog or search page opened on a different rhythm from every section beneath
   it. All fourteen templates are 96/96 now, matching `SECTION_PAD`.
 
+## [1.0.4] — 2026-09-11
+
+### Fixed
+
+- **The companion plugin could not be activated on a site running Academia.**
+  Both the theme and the plugin declared `academia_course_filter()`, on the
+  reasoning that plugins load before a theme's `functions.php` so the plugin's
+  version would always win. That holds for an ordinary request and fails on the
+  one that matters: activating a plugin happens in a request where the theme is
+  *already* loaded, so the plugin's declaration hit an existing function and
+  fataled with "Cannot redeclare". The theme now owns a single
+  `academia_course_filter()` entry point and the plugin swaps the renderer
+  through the new `academia_course_filter_renderer` filter, which cannot collide
+  and does not depend on load order. Verified in both activation orders and with
+  the plugin off.
+
+### Added
+
+- The plugin now implements `update_plugins_updates.colorlib.com`. It had
+  declared an `Update URI` header since 1.0.0 with nothing acting on it, so it
+  advertised an update endpoint and could never have offered an update.
+

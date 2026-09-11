@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-**Academia 1.0.3** is a Colorlib **WordPress block theme** (Full Site Editing) for
+**Academia 1.0.4** is a Colorlib **WordPress block theme** (Full Site Editing) for
 education sites, plus a companion plugin. 53 patterns, 18 templates, 8 colour
 palettes × 5 typography presets, 6 one-click starter sites, text domain
 `academia`. It is **not** a static HTML template — the Colorlib R2
@@ -230,6 +230,14 @@ keeps the no-JS path working.
   static cards was deleted rather than restyled: two card designs that must stay
   in visual sync is how inconsistency starts. The dynamic grid plus the plugin's
   demo importer covers "a site with no courses yet".
+- **Never rely on "plugins load before the theme" to pick between two
+  declarations of the same function.** It is true for an ordinary request and
+  false for plugin *activation*, where the theme is already loaded — the theme
+  and plugin both declared `academia_course_filter()` and activating the plugin
+  fataled with "Cannot redeclare", so the companion plugin could not be turned
+  on at all. The theme owns the entry point; the plugin swaps behaviour through
+  `academia_course_filter_renderer`. **Test plugin activation with the theme
+  already active** — activating the plugin first hides this entirely.
 - **`.wp-site-blocks` applies the root `blockGap` between the top-level
   regions.** It is a flow container, so header, main and footer each get a
   `margin-block-start` — a 20px strip of page background that is invisible next

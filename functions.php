@@ -12,7 +12,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'ACADEMIA_VERSION', '1.0.3' );
+define( 'ACADEMIA_VERSION', '1.0.4' );
 
 /**
  * Theme supports.

@@ -17,9 +17,13 @@
  * with a page load — because the markup it enhances is the finished result,
  * not an empty shell waiting to be filled.
  *
- * This function replaces the theme's fallback of the same name. Plugins load
- * before a theme's functions.php, so the theme's `function_exists` guard sees
- * this one already defined and skips its own.
+ * The renderer is registered through the theme's
+ * `academia_course_filter_renderer` filter rather than by declaring a function
+ * of the same name. Declaring it was the original approach and it fataled: on
+ * plugin *activation* WordPress has already loaded the theme, so the theme's
+ * function existed and this file redeclared it — the plugin could not be
+ * activated on a site running Academia at all. A filter cannot collide and does
+ * not depend on load order.
  *
  * @package Academia_Library
  */
@@ -49,12 +53,23 @@ function academia_library_filter_state() {
 }
 
 /**
+ * Register this renderer with the theme.
+ *
+ * @param callable $renderer The theme's default renderer.
+ * @return callable
+ */
+function academia_library_register_renderer( $renderer ) {
+	return function_exists( 'academia_course_card' ) ? 'academia_library_course_filter' : $renderer;
+}
+add_filter( 'academia_course_filter_renderer', 'academia_library_register_renderer' );
+
+/**
  * The course browser.
  *
  * @param array $args Optional. Overrides for the underlying query.
  * @return string
  */
-function academia_course_filter( $args = array() ) {
+function academia_library_course_filter( $args = array() ) {
 	// Every rendering helper used below lives in the theme. Without it there
 	// is nothing sensible to draw, so say so rather than fataling.
 	if ( ! function_exists( 'academia_course_card' ) ) {

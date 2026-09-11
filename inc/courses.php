@@ -749,23 +749,58 @@ function academia_course_empty_state() {
 /* -------------------------------------------------------------------------
  * The filter bar.
  *
- * Plugins load before a theme's functions.php, so when Academia Library is
- * active its richer version is already defined and this one is skipped. The
- * guard is what lets the course-filter pattern be used either way instead of
- * fataling on a missing function.
+ * One entry point, and a filter for the renderer — deliberately NOT two
+ * versions of the same function behind a `function_exists` guard.
+ *
+ * That was the original design, on the reasoning that plugins load before a
+ * theme's functions.php so the plugin's richer version would always win. It is
+ * true for an ordinary request and false for the one that matters: when a
+ * plugin is *activated*, WordPress has already loaded the theme, then includes
+ * the plugin file — so the plugin's declaration hit an
+ * already-declared function and fataled. The companion plugin could not be
+ * activated on a site running this theme at all.
+ *
+ * So the theme owns the function and the plugin swaps the renderer through
+ * `academia_course_filter_renderer`, which cannot collide and does not care
+ * about load order.
  * ---------------------------------------------------------------------- */
 
-if ( ! function_exists( 'academia_course_filter' ) ) {
+/**
+ * Search, category, level and sort controls, plus the results grid.
+ *
+ * @param array $args Optional. Overrides for the underlying query.
+ * @return string
+ */
+function academia_course_filter( $args = array() ) {
 	/**
-	 * Search, category, level and sort controls, plus the results grid.
+	 * Filters which callback renders the course browser.
 	 *
-	 * This fallback is a plain GET form: it filters correctly, with a page
-	 * load per change. The plugin's version adds the no-reload swap.
+	 * Academia Library points this at its own renderer, which adds filtering
+	 * without a page load. Anything returned must accept the same `$args` and
+	 * return markup.
+	 *
+	 * @param callable $renderer Renderer callback.
+	 */
+	$renderer = apply_filters( 'academia_course_filter_renderer', 'academia_default_course_filter' );
+
+	if ( is_callable( $renderer ) ) {
+		return (string) call_user_func( $renderer, $args );
+	}
+
+	return academia_default_course_filter( $args );
+}
+
+if ( ! function_exists( 'academia_default_course_filter' ) ) {
+	/**
+	 * The built-in renderer: a plain GET form.
+	 *
+	 * It filters correctly, with a page load per change. Academia Library's
+	 * renderer adds the no-reload swap on top of the same markup.
 	 *
 	 * @param array $args Optional. Overrides for the underlying query.
 	 * @return string
 	 */
-	function academia_course_filter( $args = array() ) {
+	function academia_default_course_filter( $args = array() ) {
 		$search   = isset( $_GET['course_search'] ) ? sanitize_text_field( wp_unslash( $_GET['course_search'] ) ) : '';
 		$category = isset( $_GET['course_cat'] ) ? sanitize_title( wp_unslash( $_GET['course_cat'] ) ) : '';
 		$level    = isset( $_GET['course_level'] ) ? sanitize_title( wp_unslash( $_GET['course_level'] ) ) : '';

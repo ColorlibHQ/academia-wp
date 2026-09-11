@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Academia Library 1.0.0\n"
+"Project-Id-Version: Academia Library 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/academia-library\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-11T12:25:41+00:00\n"
+"POT-Creation-Date: 2026-09-11T13:36:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: academia-library\n"
@@ -39,176 +39,176 @@ msgstr ""
 msgid "https://colorlib.com/"
 msgstr ""
 
-#: academia-library.php:55
+#: academia-library.php:58
 msgctxt "Post type general name"
 msgid "Courses"
 msgstr ""
 
-#: academia-library.php:56
+#: academia-library.php:59
 msgctxt "Post type singular name"
 msgid "Course"
 msgstr ""
 
-#: academia-library.php:57
+#: academia-library.php:60
 msgctxt "Admin Menu text"
 msgid "Courses"
 msgstr ""
 
-#: academia-library.php:58
+#: academia-library.php:61
 msgid "Add course"
 msgstr ""
 
-#: academia-library.php:59
+#: academia-library.php:62
 msgid "Edit course"
 msgstr ""
 
-#: academia-library.php:60
+#: academia-library.php:63
 msgid "New course"
 msgstr ""
 
-#: academia-library.php:61
+#: academia-library.php:64
 msgid "View course"
 msgstr ""
 
-#: academia-library.php:62
+#: academia-library.php:65
 msgid "Search courses"
 msgstr ""
 
-#: academia-library.php:63
+#: academia-library.php:66
 msgid "No courses found"
 msgstr ""
 
-#: academia-library.php:64
+#: academia-library.php:67
 msgid "No courses in the bin"
 msgstr ""
 
-#: academia-library.php:65
+#: academia-library.php:68
 #: demo.php:304
 msgid "Course image"
 msgstr ""
 
-#: academia-library.php:66
+#: academia-library.php:69
 msgid "Set course image"
 msgstr ""
 
-#: academia-library.php:67
+#: academia-library.php:70
 msgid "Remove course image"
 msgstr ""
 
-#: academia-library.php:68
+#: academia-library.php:71
 msgid "Course archive"
 msgstr ""
 
-#: academia-library.php:83
+#: academia-library.php:86
 msgctxt "Taxonomy general name"
 msgid "Subjects"
 msgstr ""
 
-#: academia-library.php:84
+#: academia-library.php:87
 msgctxt "Taxonomy singular name"
 msgid "Subject"
 msgstr ""
 
-#: academia-library.php:85
+#: academia-library.php:88
 msgid "Add subject"
 msgstr ""
 
-#: academia-library.php:86
+#: academia-library.php:89
 msgid "Edit subject"
 msgstr ""
 
-#: academia-library.php:87
+#: academia-library.php:90
 msgid "Search subjects"
 msgstr ""
 
-#: academia-library.php:98
+#: academia-library.php:101
 msgctxt "Taxonomy general name"
 msgid "Levels"
 msgstr ""
 
-#: academia-library.php:99
+#: academia-library.php:102
 msgctxt "Taxonomy singular name"
 msgid "Level"
 msgstr ""
 
-#: academia-library.php:100
+#: academia-library.php:103
 msgid "Add level"
 msgstr ""
 
-#: academia-library.php:101
+#: academia-library.php:104
 msgid "Edit level"
 msgstr ""
 
-#: academia-library.php:102
+#: academia-library.php:105
 msgid "Search levels"
 msgstr ""
 
-#: academia-library.php:128
+#: academia-library.php:131
 #: admin.php:125
 msgid "Duration"
 msgstr ""
 
-#: academia-library.php:129
+#: academia-library.php:132
 msgid "For example “8 weeks” or “12 hours”."
 msgstr ""
 
-#: academia-library.php:134
+#: academia-library.php:137
 msgid "Lessons"
 msgstr ""
 
-#: academia-library.php:135
+#: academia-library.php:138
 msgid "How many lessons or sessions the course contains."
 msgstr ""
 
-#: academia-library.php:140
+#: academia-library.php:143
 #: admin.php:124
-#: filter.php:137
+#: filter.php:152
 msgid "Level"
 msgstr ""
 
-#: academia-library.php:141
+#: academia-library.php:144
 msgid "Used only when no Level taxonomy term is set."
 msgstr ""
 
-#: academia-library.php:146
+#: academia-library.php:149
 #: admin.php:126
-#: filter.php:151
+#: filter.php:166
 msgid "Price"
 msgstr ""
 
-#: academia-library.php:147
+#: academia-library.php:150
 msgid "Numbers only. Leave empty for a free course."
 msgstr ""
 
-#: academia-library.php:152
+#: academia-library.php:155
 msgid "Offer price"
 msgstr ""
 
-#: academia-library.php:153
+#: academia-library.php:156
 msgid "Shown with the full price struck through."
 msgstr ""
 
-#: academia-library.php:158
+#: academia-library.php:161
 msgid "Instructor"
 msgstr ""
 
-#: academia-library.php:159
+#: academia-library.php:162
 msgid "The name shown on the course card."
 msgstr ""
 
-#: academia-library.php:164
+#: academia-library.php:167
 msgid "Rating"
 msgstr ""
 
-#: academia-library.php:165
+#: academia-library.php:168
 msgid "Between 0 and 5. Leave empty to hide the stars."
 msgstr ""
 
-#: academia-library.php:170
+#: academia-library.php:173
 msgid "Reviews"
 msgstr ""
 
-#: academia-library.php:171
+#: academia-library.php:174
 msgid "How many ratings the average is based on."
 msgstr ""
 
@@ -437,48 +437,48 @@ msgstr ""
 msgid "Create demo courses"
 msgstr ""
 
-#: filter.php:117
+#: filter.php:132
 msgid "Search"
 msgstr ""
 
-#: filter.php:118
+#: filter.php:133
 msgid "Course or subject"
 msgstr ""
 
-#: filter.php:123
+#: filter.php:138
 msgid "Subject"
 msgstr ""
 
-#: filter.php:125
+#: filter.php:140
 msgid "All subjects"
 msgstr ""
 
-#: filter.php:139
+#: filter.php:154
 msgid "Any level"
 msgstr ""
 
-#: filter.php:149
+#: filter.php:164
 msgid "Newest first"
 msgstr ""
 
-#: filter.php:150
+#: filter.php:165
 msgid "A to Z"
 msgstr ""
 
-#: filter.php:152
+#: filter.php:167
 msgid "Best rated"
 msgstr ""
 
-#: filter.php:155
+#: filter.php:170
 msgid "Sort by"
 msgstr ""
 
-#: filter.php:165
+#: filter.php:180
 msgid "Apply filters"
 msgstr ""
 
 #. translators: %s: number of courses.
-#: filter.php:187
+#: filter.php:202
 #, php-format
 msgid "%s course"
 msgid_plural "%s courses"
