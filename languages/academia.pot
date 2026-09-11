@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Academia 1.0.0\n"
+"Project-Id-Version: Academia 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/academia\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-11T12:25:56+00:00\n"
+"POT-Creation-Date: 2026-09-11T12:52:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: academia\n"
@@ -248,100 +248,100 @@ msgstr[1] ""
 msgid "(no title)"
 msgstr ""
 
-#: inc/courses.php:683
+#: inc/courses.php:693
 msgid "View course"
 msgstr ""
 
-#: inc/courses.php:725
+#: inc/courses.php:735
 msgid "No courses yet"
 msgstr ""
 
-#: inc/courses.php:728
+#: inc/courses.php:738
 msgid "Add your first course and it will appear here."
 msgstr ""
 
-#: inc/courses.php:729
+#: inc/courses.php:739
 msgid "Add a course"
 msgstr ""
 
-#: inc/courses.php:731
+#: inc/courses.php:741
 msgid "Install Academia Library to add courses with levels, durations and prices — or publish posts in a category called “courses”."
 msgstr ""
 
-#: inc/courses.php:733
+#: inc/courses.php:743
 msgid "Courses will be listed here soon."
 msgstr ""
 
-#: inc/courses.php:786
+#: inc/courses.php:796
 #: patterns/sidebar.php:20
 msgid "Search"
 msgstr ""
 
-#: inc/courses.php:787
+#: inc/courses.php:797
 msgid "Course or subject"
 msgstr ""
 
-#: inc/courses.php:792
+#: inc/courses.php:802
 msgid "Subject"
 msgstr ""
 
-#: inc/courses.php:794
+#: inc/courses.php:804
 msgid "All subjects"
 msgstr ""
 
-#: inc/courses.php:806
+#: inc/courses.php:816
 msgid "Level"
 msgstr ""
 
-#: inc/courses.php:808
+#: inc/courses.php:818
 msgid "Any level"
 msgstr ""
 
-#: inc/courses.php:818
+#: inc/courses.php:828
 msgid "Newest first"
 msgstr ""
 
-#: inc/courses.php:819
+#: inc/courses.php:829
 msgid "A to Z"
 msgstr ""
 
-#: inc/courses.php:820
+#: inc/courses.php:830
 msgid "Price"
 msgstr ""
 
-#: inc/courses.php:821
+#: inc/courses.php:831
 msgid "Best rated"
 msgstr ""
 
-#: inc/courses.php:824
+#: inc/courses.php:834
 msgid "Sort by"
 msgstr ""
 
-#: inc/courses.php:835
+#: inc/courses.php:845
 msgid "Apply filters"
 msgstr ""
 
 #. translators: %s: number of courses.
-#: inc/courses.php:843
+#: inc/courses.php:853
 #, php-format
 msgid "%s course"
 msgid_plural "%s courses"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/courses.php:896
+#: inc/courses.php:906
 msgid "Course pages"
 msgstr ""
 
-#: inc/courses.php:919
+#: inc/courses.php:929
 msgid "Nothing matched those filters"
 msgstr ""
 
-#: inc/courses.php:920
+#: inc/courses.php:930
 msgid "Try a broader subject, or clear the search box."
 msgstr ""
 
-#: inc/courses.php:921
+#: inc/courses.php:931
 msgid "Clear all filters"
 msgstr ""
 
@@ -370,7 +370,7 @@ msgid "Home"
 msgstr ""
 
 #: inc/front-page-setup.php:145
-#: inc/starter-sites.php:507
+#: inc/starter-sites.php:518
 msgctxt "Title of the posts page created on activation"
 msgid "Blog"
 msgstr ""
@@ -455,7 +455,6 @@ msgid "You are not allowed to do that."
 msgstr ""
 
 #: inc/scheme.php:79
-#: patterns/header.php:30
 msgid "Dark"
 msgstr ""
 
@@ -664,98 +663,98 @@ msgstr ""
 msgid "The starter site’s home page pattern could not be loaded."
 msgstr ""
 
-#: inc/starter-sites.php:607
+#: inc/starter-sites.php:669
 #: patterns/footer-bootcamp.php:96
 msgid "Blog"
 msgstr ""
 
-#: inc/starter-sites.php:635
+#: inc/starter-sites.php:697
 msgid "Navigation"
 msgstr ""
 
-#: inc/starter-sites.php:739
+#: inc/starter-sites.php:801
 msgid "Footer"
 msgstr ""
 
-#: inc/starter-sites.php:753
+#: inc/starter-sites.php:815
 msgctxt "Header call-to-action button"
 msgid "Get Premium"
 msgstr ""
 
-#: inc/starter-sites.php:780
+#: inc/starter-sites.php:842
 msgid "Header"
 msgstr ""
 
-#: inc/starter-sites.php:807
-#: inc/starter-sites.php:808
+#: inc/starter-sites.php:869
+#: inc/starter-sites.php:870
 msgid "Starter Sites"
 msgstr ""
 
-#: inc/starter-sites.php:823
+#: inc/starter-sites.php:885
 msgid "You are not allowed to change the site design."
 msgstr ""
 
-#: inc/starter-sites.php:854
+#: inc/starter-sites.php:916
 msgid "Set up your site"
 msgstr ""
 
-#: inc/starter-sites.php:887
+#: inc/starter-sites.php:949
 msgid "Academia starter sites"
 msgstr ""
 
-#: inc/starter-sites.php:889
+#: inc/starter-sites.php:951
 msgid "Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Setting one up takes three short steps — the starter, your name and look, then anything it needs installing. Your existing pages are never deleted."
 msgstr ""
 
 #. translators: %s: link to the site front page.
-#: inc/starter-sites.php:897
+#: inc/starter-sites.php:959
 #, php-format
 msgid "Starter site applied. <a href=\"%s\">View your site</a>."
 msgstr ""
 
-#: inc/starter-sites.php:903
+#: inc/starter-sites.php:965
 msgid "That starter site could not be applied. Please try again."
 msgstr ""
 
 #. translators: %s: starter site name.
-#: inc/starter-sites.php:926
+#: inc/starter-sites.php:988
 #, php-format
 msgid "The home page the %s starter builds"
 msgstr ""
 
-#: inc/starter-sites.php:933
+#: inc/starter-sites.php:995
 msgid "Applied"
 msgstr ""
 
 #. translators: %d: number of pages the starter creates.
-#: inc/starter-sites.php:945
+#: inc/starter-sites.php:1007
 #, php-format
 msgid "Creates %d page"
 msgid_plural "Creates %d pages"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/starter-sites.php:952
+#: inc/starter-sites.php:1014
 msgid "Set up again"
 msgstr ""
 
-#: inc/starter-sites.php:952
+#: inc/starter-sites.php:1014
 msgid "Set up this starter"
 msgstr ""
 
-#: inc/starter-sites.php:959
+#: inc/starter-sites.php:1021
 msgid "Apply without setup"
 msgstr ""
 
-#: inc/starter-sites.php:979
+#: inc/starter-sites.php:1041
 msgid "Choose a starter"
 msgstr ""
 
-#: inc/starter-sites.php:980
+#: inc/starter-sites.php:1042
 msgid "Name and look"
 msgstr ""
 
-#: inc/starter-sites.php:981
+#: inc/starter-sites.php:1043
 msgid "Finish"
 msgstr ""
 
@@ -793,6 +792,18 @@ msgstr ""
 #: patterns/accreditation.php
 msgctxt "Pattern description"
 msgid "A three-part trust row for accreditation and registration facts."
+msgstr ""
+
+#: patterns/accreditation.php:19
+msgid "Accredited by the National Council for Further Education"
+msgstr ""
+
+#: patterns/accreditation.php:19
+msgid "Registered training provider, no. 4471-B"
+msgstr ""
+
+#: patterns/accreditation.php:19
+msgid "Syllabus reviewed every twelve months"
 msgstr ""
 
 #: patterns/admissions-steps.php
@@ -966,80 +977,6 @@ msgstr ""
 
 #: patterns/courses-featured.php:39
 msgid "See every course"
-msgstr ""
-
-#: patterns/courses-showcase.php
-msgctxt "Pattern title"
-msgid "Courses: showcase"
-msgstr ""
-
-#: patterns/courses-showcase.php
-msgctxt "Pattern description"
-msgid "Three course cards with fixed copy, for a site with no courses entered yet."
-msgstr ""
-
-#: patterns/courses-showcase.php:41
-msgid "Design"
-msgstr ""
-
-#: patterns/courses-showcase.php:50
-msgid "8 weeks"
-msgstr ""
-
-#: patterns/courses-showcase.php:50
-msgid "24 lessons"
-msgstr ""
-
-#: patterns/courses-showcase.php:50
-msgid "Beginner"
-msgstr ""
-
-#: patterns/courses-showcase.php:53
-#: patterns/courses-showcase.php:93
-#: patterns/courses-showcase.php:133
-msgid "Rated 4.9 out of 5"
-msgstr ""
-
-#: patterns/courses-showcase.php:58
-#: patterns/pricing.php:37
-msgid "$149"
-msgstr ""
-
-#: patterns/courses-showcase.php:81
-msgid "Development"
-msgstr ""
-
-#: patterns/courses-showcase.php:90
-msgid "12 weeks"
-msgstr ""
-
-#: patterns/courses-showcase.php:90
-msgid "36 lessons"
-msgstr ""
-
-#: patterns/courses-showcase.php:90
-#: patterns/courses-showcase.php:130
-msgid "Intermediate"
-msgstr ""
-
-#: patterns/courses-showcase.php:98
-msgid "$249"
-msgstr ""
-
-#: patterns/courses-showcase.php:121
-msgid "Data"
-msgstr ""
-
-#: patterns/courses-showcase.php:130
-msgid "10 weeks"
-msgstr ""
-
-#: patterns/courses-showcase.php:130
-msgid "30 lessons"
-msgstr ""
-
-#: patterns/courses-showcase.php:138
-msgid "$199"
 msgstr ""
 
 #: patterns/cta-enrol.php
@@ -1386,6 +1323,10 @@ msgctxt "Pattern description"
 msgid "Logo or site title on the left, primary navigation and a call-to-action button on the right."
 msgstr ""
 
+#: patterns/header.php:29
+msgid "Switch to dark appearance"
+msgstr ""
+
 #: patterns/hero-academy.php
 msgctxt "Pattern title"
 msgid "Hero: academy"
@@ -1714,6 +1655,10 @@ msgstr ""
 #: patterns/pricing.php
 msgctxt "Pattern description"
 msgid "Three tuition tiers with the middle one highlighted."
+msgstr ""
+
+#: patterns/pricing.php:37
+msgid "$149"
 msgstr ""
 
 #: patterns/pricing.php:37

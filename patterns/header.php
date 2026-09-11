@@ -24,13 +24,13 @@
 		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 		<div class="wp-block-group">
 			<!-- wp:navigation {"style":{"spacing":{"blockGap":"var:preset|spacing|40"}}} /-->
-	<!-- wp:buttons {"layout":{"type":"flex"}} -->
-	<div class="wp-block-buttons">
-		<!-- wp:button {"className":"academia-scheme-toggle is-style-academia-ghost","style":{"spacing":{"padding":{"left":"0.7rem","right":"0.7rem","top":"0.7rem","bottom":"0.7rem"}}}} -->
-		<div class="wp-block-button academia-scheme-toggle is-style-academia-ghost"><a class="wp-block-button__link wp-element-button" href="#" style="padding-top:0.7rem;padding-right:0.7rem;padding-bottom:0.7rem;padding-left:0.7rem" aria-live="polite"><?php esc_html_e( 'Dark', 'academia' ); ?></a></div>
-		<!-- /wp:button -->
-	</div>
-	<!-- /wp:buttons -->
+
+	<!-- wp:html -->
+	<button type="button" class="academia-scheme-toggle" aria-pressed="false" aria-label="<?php esc_attr_e( 'Switch to dark appearance', 'academia' ); ?>">
+		<svg class="academia-scheme-toggle__sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/></svg>
+		<svg class="academia-scheme-toggle__moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+	</button>
+	<!-- /wp:html -->
 
 			<!-- wp:buttons -->
 			<div class="wp-block-buttons">

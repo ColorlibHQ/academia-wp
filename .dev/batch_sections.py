@@ -136,32 +136,6 @@ def courses_featured():
     )
 
 
-def courses_showcase():
-    """Static cards, for a site with no courses entered yet.
-
-    Also what makes the pattern preview in the inserter look like something.
-    """
-    cards = [
-        A.static_course_card(
-            image_file="course-1.avif", category="Design", title="Foundations of interface design",
-            body="Grids, type and colour — the decisions behind interfaces people trust.",
-            duration="8 weeks", lessons="24 lessons", level="Beginner", price="$149"),
-        A.static_course_card(
-            image_file="course-2.avif", category="Development", title="JavaScript for the web",
-            body="From the language itself to shipping an app people can actually use.",
-            duration="12 weeks", lessons="36 lessons", level="Intermediate", price="$249"),
-        A.static_course_card(
-            image_file="course-3.avif", category="Data", title="Analysis with Python",
-            body="Clean a messy dataset, ask it a question, and defend the answer.",
-            duration="10 weeks", lessons="30 lessons", level="Intermediate", price="$199"),
-    ]
-    return A.section_std(
-        A.intro(eyebrow_text="Popular courses", title="Where most people start",
-                lead="The three courses students recommend most often.")
-        + "\n" + A.grid("\n".join(cards), cols=3),
-    )
-
-
 def subjects():
     """The subject grid.
 
@@ -275,19 +249,33 @@ def testimonials():
 
 
 def accreditation():
-    """A trust row. Text rather than borrowed logos: shipping recognisable
-    marks a user has no right to would be worse than shipping none."""
+    """A compact trust bar.
+
+    The first cut stacked an icon badge above a line of text in three columns,
+    which read as three orphaned icons floating under the hero with 190px of
+    dead space beneath. A trust bar is not a section with a heading — it is one
+    horizontal run of facts, so the icon sits inline with its text, the items
+    are separated by rules, and the padding is tight.
+
+    Text rather than borrowed logos: shipping recognisable accreditation marks
+    a user has no right to would be worse than shipping none.
+    """
     marks = [
         ("shield", "Accredited by the National Council for Further Education"),
         ("check-circle", "Registered training provider, no. 4471-B"),
         ("refresh", "Syllabus reviewed every twelve months"),
     ]
-    cells = "\n".join(
-        A.stack(A.icon_badge(icon, bg="primary") + "\n" + A.para(text, color="muted", size="small"),
-                gap="20")
+    items = "".join(
+        '<li>{{ICON:%s}}<span>%s</span></li>' % (icon, A.t(text))
         for icon, text in marks
     )
-    return A.section_std(A.grid(cells, cols=3), pad=("60", "60"), gap="0")
+    bar = A.resolve_icons(A.html_block('<ul class="academia-trustbar">%s</ul>' % items))
+
+    return A.section_std(
+        A.group(bar, align="wide", layout="default"),
+        pad=("50", "50"),
+        gap="0",
+    )
 
 
 def outcomes():
@@ -501,11 +489,6 @@ SECTIONS = [
     ("courses-featured", "Courses: open for enrolment", "academia_courses, academia",
      "courses, grid, enrolment, catalogue",
      "The live course grid, read from Academia Library, an LMS or your posts.", courses_featured),
-
-    ("courses-showcase", "Courses: showcase", "academia_courses, academia",
-     "courses, cards, popular, featured",
-     "Three course cards with fixed copy, for a site with no courses entered yet.",
-     courses_showcase),
 
     ("subjects", "Subjects", "academia_courses, academia",
      "subjects, departments, categories, topics",

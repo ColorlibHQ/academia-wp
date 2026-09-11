@@ -86,7 +86,7 @@ PALETTE = [
     ("Teal light", "teal-light", "#1eb2a6"),
     ("Accent", "accent", "#b45309"),
     ("Dark", "dark", "#0b1720"),
-    ("Divider", "divider", "#dde7e5"),
+    ("Divider", "divider", "#c3d3cf"),
 ]
 
 # Colour-only variations. Each keeps the same ten slugs so every pattern follows.
@@ -95,42 +95,42 @@ COLOR_SETS = {
     "colors-1-teal": ("Teal", {
         "base": "#ffffff", "surface": "#f4f8f7", "contrast": "#0f1a1e", "muted": "#4b5563",
         "primary": "#0f766e", "primary-deep": "#115e59", "teal-light": "#1eb2a6",
-        "accent": "#b45309", "dark": "#0b1720", "divider": "#dde7e5",
+        "accent": "#b45309", "dark": "#0b1720", "divider": "#c3d3cf",
     }),
     "colors-2-indigo": ("Indigo", {
         "base": "#ffffff", "surface": "#f5f6fb", "contrast": "#12142b", "muted": "#4c5270",
         "primary": "#4338ca", "primary-deep": "#312e81", "teal-light": "#6366f1",
-        "accent": "#b45309", "dark": "#111233", "divider": "#e0e2f0",
+        "accent": "#b45309", "dark": "#111233", "divider": "#ccd0e6",
     }),
     "colors-3-forest": ("Forest", {
         "base": "#ffffff", "surface": "#f4f8f3", "contrast": "#11210f", "muted": "#4a5a48",
         "primary": "#15803d", "primary-deep": "#14532d", "teal-light": "#22c55e",
-        "accent": "#a16207", "dark": "#0d1a0c", "divider": "#dde8da",
+        "accent": "#a16207", "dark": "#0d1a0c", "divider": "#c6d6c2",
     }),
     "colors-4-slate": ("Slate", {
         "base": "#ffffff", "surface": "#f6f7f9", "contrast": "#111827", "muted": "#4b5563",
         "primary": "#334155", "primary-deep": "#1e293b", "teal-light": "#64748b",
-        "accent": "#b45309", "dark": "#0f172a", "divider": "#e2e6ec",
+        "accent": "#b45309", "dark": "#0f172a", "divider": "#ccd3dd",
     }),
     "colors-5-plum": ("Plum", {
         "base": "#ffffff", "surface": "#faf5f9", "contrast": "#22102a", "muted": "#5c4a63",
         "primary": "#9333ea", "primary-deep": "#6b21a8", "teal-light": "#c084fc",
-        "accent": "#0f766e", "dark": "#1b0f22", "divider": "#eee0ee",
+        "accent": "#0f766e", "dark": "#1b0f22", "divider": "#e0cde0",
     }),
     "colors-6-ember": ("Ember", {
         "base": "#ffffff", "surface": "#fdf6f3", "contrast": "#26130c", "muted": "#5f4b42",
         "primary": "#c2410c", "primary-deep": "#9a3412", "teal-light": "#fb923c",
-        "accent": "#0f766e", "dark": "#1e1009", "divider": "#f2e2da",
+        "accent": "#0f766e", "dark": "#1e1009", "divider": "#e8d2c6",
     }),
     "colors-7-midnight": ("Midnight", {
         "base": "#0e1526", "surface": "#16203a", "contrast": "#f3f6fc", "muted": "#a9b6d0",
         "primary": "#7dd3fc", "primary-deep": "#38bdf8", "teal-light": "#0ea5e9",
-        "accent": "#fbbf24", "dark": "#080d19", "divider": "#25314f",
+        "accent": "#fbbf24", "dark": "#080d19", "divider": "#33415f",
     }),
     "colors-8-slate-dark": ("Graphite", {
         "base": "#141414", "surface": "#1e1e1e", "contrast": "#f5f5f4", "muted": "#b3b1ac",
         "primary": "#5eead4", "primary-deep": "#2dd4bf", "teal-light": "#14b8a6",
-        "accent": "#fbbf24", "dark": "#0a0a0a", "divider": "#2e2e2e",
+        "accent": "#fbbf24", "dark": "#0a0a0a", "divider": "#3d3d3d",
     }),
 }
 
@@ -196,11 +196,13 @@ def build_theme():
         # a stray settings.shadow demotes a colour variation to a full one.
         ("shadow", {"defaultPresets": False, "presets": [
             {"name": "Card", "slug": "card",
-             "shadow": "0 1px 2px color-mix(in srgb, var(--wp--preset--color--contrast) 6%, transparent), "
-                       "0 10px 28px -14px color-mix(in srgb, var(--wp--preset--color--contrast) 16%, transparent)"},
+             "shadow": "0 1px 1px color-mix(in srgb, var(--wp--preset--color--contrast) 4%, transparent), "
+                       "0 2px 6px color-mix(in srgb, var(--wp--preset--color--contrast) 6%, transparent), "
+                       "0 10px 20px -8px color-mix(in srgb, var(--wp--preset--color--contrast) 10%, transparent)"},
             {"name": "Lifted", "slug": "lifted",
-             "shadow": "0 2px 4px color-mix(in srgb, var(--wp--preset--color--contrast) 5%, transparent), "
-                       "0 20px 44px -20px color-mix(in srgb, var(--wp--preset--color--contrast) 24%, transparent)"},
+             "shadow": "0 2px 4px color-mix(in srgb, var(--wp--preset--color--contrast) 6%, transparent), "
+                       "0 8px 16px -4px color-mix(in srgb, var(--wp--preset--color--contrast) 10%, transparent), "
+                       "0 24px 48px -12px color-mix(in srgb, var(--wp--preset--color--contrast) 18%, transparent)"},
             {"name": "Ring", "slug": "ring",
              "shadow": "0 0 0 1px color-mix(in srgb, var(--wp--preset--color--contrast) 10%, transparent)"},
         ]}),

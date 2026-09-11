@@ -4,7 +4,7 @@ Contributors: colorlib
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: education, blog, portfolio, full-site-editing, block-patterns, block-styles, template-editing, wide-blocks, accessibility-ready, translation-ready, custom-colors, custom-menu, custom-logo, featured-images, threaded-comments, one-column, two-columns, right-sidebar, left-sidebar, rtl-language-support, sticky-post, theme-options
@@ -58,12 +58,12 @@ enhancement only removes the page load.
 
 = Blocks and editing =
 
-* 52 patterns: heroes, course grids, subject tiles, curriculum outlines,
+* 53 patterns: heroes, course grids, subject tiles, curriculum outlines,
   instructors, testimonials, statistics, fee tables, admissions steps, FAQs,
   calls to action and contact sections.
 * Nine whole-page starters for Home, Courses, Instructors, Fees, About,
   Contact, Admissions, Syllabus and Outcomes.
-* 21 templates including a single-course layout, the course archive and two
+* 18 templates including a single-course layout, the course archive and two
   course taxonomy archives.
 * WooCommerce-ready.
 * Contact sections render whichever form plugin is active — Academia detects ten
@@ -107,8 +107,9 @@ pairings.
 
 = Where is the dark mode toggle? =
 
-In the header, next to the call-to-action button. Delete that button and the
-toggle's script and stylesheet stop loading entirely.
+In the header — the small sun/moon icon before the call-to-action button. Remove
+it from the header template part and its script and stylesheet stop loading
+entirely.
 
 == Copyright ==
 
@@ -157,6 +158,9 @@ Photographs (assets/images/*.avif)
   Source: https://unsplash.com/
 
 == Changelog ==
+
+= 1.0.1 =
+* Polish pass: alternating section grounds, visible card outlines, grouped card internals, a compact trust bar and an icon scheme toggle. See CHANGELOG.md.
 
 = 1.0.0 =
 * Initial release.

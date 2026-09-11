@@ -65,7 +65,7 @@
 				{
 					"name": "Divider",
 					"slug": "divider",
-					"color": "#dde7e5"
+					"color": "#c3d3cf"
 				}
 			],
 			"gradients": [
@@ -97,12 +97,12 @@
 				{
 					"name": "Card",
 					"slug": "card",
-					"shadow": "0 1px 2px color-mix(in srgb, var(--wp--preset--color--contrast) 6%, transparent), 0 10px 28px -14px color-mix(in srgb, var(--wp--preset--color--contrast) 16%, transparent)"
+					"shadow": "0 1px 1px color-mix(in srgb, var(--wp--preset--color--contrast) 4%, transparent), 0 2px 6px color-mix(in srgb, var(--wp--preset--color--contrast) 6%, transparent), 0 10px 20px -8px color-mix(in srgb, var(--wp--preset--color--contrast) 10%, transparent)"
 				},
 				{
 					"name": "Lifted",
 					"slug": "lifted",
-					"shadow": "0 2px 4px color-mix(in srgb, var(--wp--preset--color--contrast) 5%, transparent), 0 20px 44px -20px color-mix(in srgb, var(--wp--preset--color--contrast) 24%, transparent)"
+					"shadow": "0 2px 4px color-mix(in srgb, var(--wp--preset--color--contrast) 6%, transparent), 0 8px 16px -4px color-mix(in srgb, var(--wp--preset--color--contrast) 10%, transparent), 0 24px 48px -12px color-mix(in srgb, var(--wp--preset--color--contrast) 18%, transparent)"
 				},
 				{
 					"name": "Ring",

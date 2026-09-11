@@ -20,7 +20,7 @@ academia/
 │   ├── scheme.php          visitor light/dark
 │   ├── plugin-notice.php   the (dismissible) plugin recommendation
 │   └── updates.php         self-hosted updates
-├── patterns/               54 patterns (generated — edit .dev/batch_*.py)
+├── patterns/               53 patterns (generated — edit .dev/batch_*.py)
 ├── templates/              18 templates, incl. course single + archives
 ├── parts/                  header, footer, sidebar
 ├── styles/                 8 palettes, 5 type presets, 8 looks, 8 section styles

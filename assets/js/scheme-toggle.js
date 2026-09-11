@@ -17,27 +17,16 @@
 		}
 		var isDark = current() === 'dark';
 		var labels = window.academiaScheme || {};
-		document.querySelectorAll( '.academia-scheme-toggle' ).forEach( function ( wrapper ) {
-			// The core Button block renders the control as an <a> inside the
-			// wrapper the class lands on, so the state belongs on the link.
-			var control = wrapper.matches( 'a, button' ) ? wrapper : wrapper.querySelector( 'a, button' );
-			if ( ! control ) {
-				return;
-			}
-			// Applied here rather than stored in the pattern: core's button
-			// save() does not emit these, and markup it did not produce
-			// fails block validation.
-			control.setAttribute( 'role', 'button' );
+		document.querySelectorAll( '.academia-scheme-toggle' ).forEach( function ( control ) {
 			control.setAttribute( 'aria-pressed', isDark ? 'true' : 'false' );
 
-			// The visible word names what clicking will do, not what is
-			// already on — "Dark" while the page is dark reads as a status.
+			// The label names what clicking will do, not what is already on.
+			// It is an aria-label only: the visible control is two icons, and
+			// CSS shows whichever matches the current scheme.
 			var next = isDark ? labels.light : labels.dark;
-			if ( next ) {
-				control.textContent = next;
-				if ( labels.switchTo ) {
-					control.setAttribute( 'aria-label', labels.switchTo.replace( '%s', next.toLowerCase() ) );
-				}
+
+			if ( next && labels.switchTo ) {
+				control.setAttribute( 'aria-label', labels.switchTo.replace( '%s', next.toLowerCase() ) );
 			}
 		} );
 	}
@@ -51,10 +40,7 @@
 	}
 
 	function bind( button ) {
-		button.addEventListener( 'click', function ( event ) {
-			if ( event.target.closest( 'a[href="#"]' ) ) {
-				event.preventDefault();
-			}
+		button.addEventListener( 'click', function () {
 			var next = current() === 'dark' ? 'light' : 'dark';
 			try {
 				window.localStorage.setItem( KEY, next );

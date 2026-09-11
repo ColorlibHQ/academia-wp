@@ -85,8 +85,8 @@ DEMOS = {
         "instructors", "testimonials", "pricing", "cta-enrol",
     ]),
     "demo-studio": ("Demo: arts studio", [
-        "hero-academy", "about-split", "courses-showcase", "instructors",
-        "testimonials", "pricing", "contact-split",
+        "hero-academy", "about-split", "courses-featured", "instructors",
+        "testimonials", "pricing", "contact-split", "cta-enrol",
     ]),
 }
 

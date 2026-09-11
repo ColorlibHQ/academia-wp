@@ -648,42 +648,52 @@ function academia_course_rating( $course ) {
 function academia_course_card( $course ) {
 	$title = '' !== $course['title'] ? $course['title'] : __( '(no title)', 'academia' );
 
-	$out = '<div class="wp-block-group academia-course-card is-style-card" style="border-radius:20px">';
+	$out = '<article class="academia-card">';
 
 	if ( $course['thumbnail_id'] ) {
-		$out .= '<figure class="wp-block-image academia-course-thumb">';
-		$out .= '<a href="' . esc_url( $course['permalink'] ) . '" tabindex="-1" aria-hidden="true">';
+		$out .= '<a class="academia-card__media" href="' . esc_url( $course['permalink'] ) . '" tabindex="-1" aria-hidden="true">';
 		$out .= wp_get_attachment_image( $course['thumbnail_id'], 'large', false, array(
 			'alt'      => '',
 			'loading'  => 'lazy',
 			'decoding' => 'async',
 		) );
-		$out .= '</a></figure>';
+		$out .= '</a>';
 	}
 
+	$out .= '<div class="academia-card__body">';
+
+	// Chip, title and summary are one group: tight gaps, because they are all
+	// answering "what is this". Uniform gaps between every element was what
+	// made the first cut read as a list of unrelated lines.
 	if ( $course['categories'] ) {
 		$term = $course['categories'][0];
-		$out .= '<p><a class="academia-chip" href="' . esc_url( (string) get_term_link( $term ) ) . '">' . esc_html( $term->name ) . '</a></p>';
+		$out .= '<p class="academia-card__eyebrow"><a class="academia-chip" href="' . esc_url( (string) get_term_link( $term ) ) . '">' . esc_html( $term->name ) . '</a></p>';
 	}
 
-	$out .= '<h3 class="wp-block-heading has-large-font-size">';
-	$out .= '<a href="' . esc_url( $course['permalink'] ) . '">' . esc_html( $title ) . '</a></h3>';
+	$out .= '<h3 class="academia-card__title"><a href="' . esc_url( $course['permalink'] ) . '">' . esc_html( $title ) . '</a></h3>';
 
 	if ( '' !== $course['excerpt'] ) {
-		$out .= '<p class="has-muted-color has-text-color">' . esc_html( $course['excerpt'] ) . '</p>';
+		$out .= '<p class="academia-card__summary">' . esc_html( $course['excerpt'] ) . '</p>';
 	}
 
-	$out .= academia_course_meta_row( $course );
-	$out .= academia_course_rating( $course );
-
-	// The price and the enrol button share the card's last line, pushed to the
-	// bottom by .academia-equal so cards in a row end level.
-	$out .= '<div class="wp-block-group academia-course-foot" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">';
-	$out .= academia_course_price( $course );
-	$out .= '<span class="wp-block-button is-style-academia-ghost"><a class="wp-block-button__link wp-element-button" href="' . esc_url( $course['permalink'] ) . '">' . esc_html__( 'View course', 'academia' ) . '</a></span>';
 	$out .= '</div>';
 
-	return $out . '</div>';
+	// Facts are a second group — the measurable details, closer to each other
+	// than to the description above them.
+	$facts = academia_course_meta_row( $course ) . academia_course_rating( $course );
+
+	if ( '' !== $facts ) {
+		$out .= '<div class="academia-card__facts">' . $facts . '</div>';
+	}
+
+	// The commitment sits on its own below a hairline, pushed to the bottom so
+	// cards in a row end level whatever their summary length.
+	$out .= '<div class="academia-card__foot">';
+	$out .= academia_course_price( $course );
+	$out .= '<a class="academia-card__action" href="' . esc_url( $course['permalink'] ) . '">' . esc_html__( 'View course', 'academia' ) . '</a>';
+	$out .= '</div>';
+
+	return $out . '</article>';
 }
 
 /**

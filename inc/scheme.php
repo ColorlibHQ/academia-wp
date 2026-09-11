@@ -85,17 +85,21 @@ function academia_scheme_assets() {
 add_action( 'wp_enqueue_scripts', 'academia_scheme_assets', 20 );
 
 /**
- * Mark the page as carrying a toggle when the pattern renders.
+ * Mark the page as carrying a toggle when it renders.
+ *
+ * Watched on `render_block` rather than a specific block type: the toggle is a
+ * real <button> in a core/html block, because core/button cannot hold an SVG
+ * without failing block validation. A cheap string test on the rendered output
+ * keeps this independent of which block the toggle is wrapped in.
  *
  * @param string $content Rendered block content.
- * @param array  $block   Parsed block.
  * @return string
  */
-function academia_scheme_detect( $content, $block ) {
-	if ( isset( $block['attrs']['className'] ) && false !== strpos( $block['attrs']['className'], 'academia-scheme-toggle' ) ) {
+function academia_scheme_detect( $content ) {
+	if ( ! academia_has_scheme_toggle() && false !== strpos( $content, 'academia-scheme-toggle' ) ) {
 		academia_has_scheme_toggle( true );
 	}
 
 	return $content;
 }
-add_filter( 'render_block_core/button', 'academia_scheme_detect', 10, 2 );
+add_filter( 'render_block', 'academia_scheme_detect' );

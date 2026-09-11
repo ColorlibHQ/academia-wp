@@ -99,47 +99,6 @@ def course_filter_php():
     return shortcode_block("academia_course_browser")
 
 
-def static_course_card(*, image_file, category, title, body, duration, lessons, level, price,
-                       rating="4.9", reviews="128"):
-    """A course card with fixed copy, for the demo homes.
-
-    The dynamic grid is the real thing; this exists so a home page looks right
-    on a site with no courses yet, and so the pattern previews in the inserter
-    are not empty.
-    """
-    thumb = group(
-        image(uri(f"assets/images/{image_file}"), "", class_name="academia-course-thumb",
-              aspect="16/10", scale="cover"),
-        class_name="academia-course-thumb-wrap",
-    )
-    stars = html_block(
-        '<p class="academia-rating"><span class="academia-stars" role="img" aria-label="'
-        + f'{tattr("Rated 4.9 out of 5")}">★★★★★</span> '
-        + f'<span>{rating} ({reviews})</span></p>'
-    )
-    meta = resolve_icons(meta_row([
-        ("clock", t(duration)),
-        ("book-open", t(lessons)),
-        ("bar-chart", t(level)),
-    ]))
-    foot = group(
-        html_block(f'<p class="academia-price">{t(price)}</p>')
-        + "\n"
-        + buttons([{"text": "View course", "url": "#", "style": "academia-ghost"}]),
-        layout="flex", justify="space-between", gap="30", wrap="wrap",
-    )
-    inner = "\n".join([
-        thumb,
-        chip(t(category)),
-        heading(title, level=3, size=CARD_TITLE_SIZE),
-        para(body, color="muted"),
-        meta,
-        stars,
-        foot,
-    ])
-    return card(inner, variation="is-style-card academia-course-card")
-
-
 def level_tile(icon, name, count):
     """One tile in the level / subject grid.
 

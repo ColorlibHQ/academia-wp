@@ -14,8 +14,9 @@
 ?>
 <!-- wp:pattern {"slug":"academia/hero-academy"} /-->
 <!-- wp:pattern {"slug":"academia/about-split"} /-->
-<!-- wp:pattern {"slug":"academia/courses-showcase"} /-->
+<!-- wp:pattern {"slug":"academia/courses-featured"} /-->
 <!-- wp:pattern {"slug":"academia/instructors"} /-->
 <!-- wp:pattern {"slug":"academia/testimonials"} /-->
 <!-- wp:pattern {"slug":"academia/pricing"} /-->
 <!-- wp:pattern {"slug":"academia/contact-split"} /-->
+<!-- wp:pattern {"slug":"academia/cta-enrol"} /-->

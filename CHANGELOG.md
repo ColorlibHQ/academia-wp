@@ -80,3 +80,40 @@ rather than ported.
   figure actually renders.
 - Imagery ships as AVIF, sized to the slot each fills — 568 KB for nineteen
   images.
+
+## [1.0.1] — 2026-09-11
+
+A polish pass after reviewing the built theme at 1:1. The design system was
+sound; its application was not.
+
+### Fixed
+
+- **Sections had no boundaries.** The home page put five consecutive sections on
+  the same white ground, so the page read as one undifferentiated column.
+  Sections now declare a role and `.dev/grounds.py` derives an alternating
+  ground from it, failing the build on two consecutive sections sharing a
+  ground, two adjacent full-bleed bands, or a long page with no band at all.
+  All 15 compositions pass.
+- **Card outlines were invisible.** The divider colour was 1.26:1 on white, so a
+  grid of cards read as floating images with loose text beneath. It is now
+  1.55:1, and the card shadow is present rather than theoretical.
+- **Nothing grouped inside a card.** Every element sat at the same distance from
+  its neighbour, so the eye had no hierarchy to follow. The course card is now
+  three groups — identity, facts, and a hairline-separated foot carrying the
+  price and the action — with tight gaps inside a group and wide gaps between.
+- **The accreditation row** was three orphaned icon badges above stacked text
+  with 190px of dead space beneath it. It is now a compact trust bar: icons
+  inline with their text, items separated by rules, tight padding.
+- **The scheme toggle** was a bordered pill reading "Dark" next to the primary
+  call to action, competing with it and reading as a status rather than a
+  control. It is now a quiet 40px icon button whose two icons cross-fade, with
+  `aria-pressed` and an action-naming `aria-label`.
+
+### Changed
+
+- The `courses-showcase` pattern is removed. Its hand-built static cards were a
+  second card design that had to be kept in visual sync with the real one; the
+  dynamic grid and the plugin's demo importer cover the same need.
+- Starter sites no longer create a page whose slug shadows a registered
+  post-type archive — the academy starter's "Courses" page was unreachable
+  behind the course archive. The menu links to the archive instead.

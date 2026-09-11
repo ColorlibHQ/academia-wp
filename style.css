@@ -7,7 +7,7 @@ Description: A block theme for schools, universities, academies and online cours
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Update URI: https://updates.colorlib.com/theme/academia.json
@@ -151,6 +151,71 @@ Photographs in assets/images/*.avif
 	}
 }
 
+/* -------------------------------------------------------------------------
+ * Scheme toggle.
+ *
+ * An icon control, not a labelled pill. The first cut was a bordered button
+ * reading "Dark" sitting next to the primary call to action, which competed
+ * with it for attention and read as a status rather than a switch. This is a
+ * quiet 40px square that only asserts itself on hover, and the two icons
+ * cross-fade so the control shows the scheme you would get by pressing it.
+ * ---------------------------------------------------------------------- */
+.academia-scheme-toggle {
+	align-items: center;
+	background: transparent;
+	border: 0;
+	border-radius: 999px;
+	color: var(--wp--preset--color--muted);
+	cursor: pointer;
+	display: inline-grid;
+	flex: none;
+	height: 40px;
+	justify-items: center;
+	padding: 0;
+	place-items: center;
+	transition: background-color 0.18s ease, color 0.18s ease;
+	width: 40px;
+}
+
+.academia-scheme-toggle:hover,
+.academia-scheme-toggle:focus-visible {
+	background: color-mix(in srgb, var(--wp--preset--color--contrast) 7%, transparent);
+	color: var(--wp--preset--color--contrast);
+}
+
+/* Both icons occupy the same cell, so the button never changes width. */
+.academia-scheme-toggle svg {
+	grid-area: 1 / 1;
+	transition: opacity 0.18s ease, transform 0.25s ease;
+}
+
+.academia-scheme-toggle__moon {
+	opacity: 1;
+	transform: none;
+}
+
+.academia-scheme-toggle__sun {
+	opacity: 0;
+	transform: rotate(-45deg);
+}
+
+/* Pressed means dark is active, so offer the sun. */
+.academia-scheme-toggle[aria-pressed="true"] .academia-scheme-toggle__moon {
+	opacity: 0;
+	transform: rotate(45deg);
+}
+
+.academia-scheme-toggle[aria-pressed="true"] .academia-scheme-toggle__sun {
+	opacity: 1;
+	transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.academia-scheme-toggle svg {
+		transition: none;
+	}
+}
+
 /* A sticky header needs a background of its own, or content scrolls through it. */
 .academia-sticky {
 	backdrop-filter: saturate(180%) blur(12px);
@@ -226,30 +291,196 @@ Photographs in assets/images/*.avif
 }
 
 /* -------------------------------------------------------------------------
- * Course cards
+ * Trust bar — one horizontal run of facts, not a section of columns.
  * ---------------------------------------------------------------------- */
-.academia-course-card {
+.academia-trustbar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.academia-trustbar li {
+	align-items: center;
+	color: var(--wp--preset--color--muted);
+	display: flex;
+	flex: 1 1 260px;
+	font-size: var(--wp--preset--font-size--small);
+	gap: 0.7rem;
+	line-height: 1.45;
+	margin: 0;
+	padding: 0.35rem var(--wp--preset--spacing--40);
+}
+
+/* Rules between items, never before the first or after the last. */
+.academia-trustbar li + li {
+	border-inline-start: 1px solid var(--wp--preset--color--divider);
+}
+
+.academia-trustbar li:first-child {
+	padding-inline-start: 0;
+}
+
+.academia-trustbar li:last-child {
+	padding-inline-end: 0;
+}
+
+.academia-trustbar svg {
+	color: var(--wp--preset--color--primary);
+	flex: none;
+	height: 1.25rem;
+	width: 1.25rem;
+}
+
+/* Stacked, the vertical rules become horizontal ones. */
+@media (max-width: 781px) {
+	.academia-trustbar li {
+		flex-basis: 100%;
+		padding-inline: 0;
+	}
+
+	.academia-trustbar li + li {
+		border-inline-start: 0;
+		border-top: 1px solid var(--wp--preset--color--divider);
+		margin-top: 0.6rem;
+		padding-top: 0.6rem;
+	}
+}
+
+/* -------------------------------------------------------------------------
+ * Course cards
+ *
+ * The card is built from three groups, not a flat run of children: what it
+ * is, what it involves, and what it costs. Gaps inside a group are tight and
+ * gaps between groups are wide, because uniform spacing makes everything
+ * equidistant and therefore ungrouped — which is what the first cut did.
+ * ---------------------------------------------------------------------- */
+.academia-card {
+	background: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--divider);
+	border-radius: 20px;
+	box-shadow: var(--wp--preset--shadow--card);
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 	overflow: hidden;
-	transition: transform 0.25s ease, box-shadow 0.25s ease;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.academia-course-card:hover,
-.academia-course-card:focus-within {
-	transform: translateY(-4px);
+.academia-card:hover,
+.academia-card:focus-within {
+	border-color: color-mix(in srgb, var(--wp--preset--color--primary) 45%, var(--wp--preset--color--divider));
+	box-shadow: var(--wp--preset--shadow--lifted);
+	transform: translateY(-3px);
 }
 
-/* The thumbnail bleeds to the card edge: the card's own padding is cancelled
- * on the image only. */
-.academia-course-card .academia-course-thumb {
-	margin: calc(-1 * var(--wp--preset--spacing--50)) calc(-1 * var(--wp--preset--spacing--50)) 0;
-}
-
-.academia-course-card .academia-course-thumb img {
-	aspect-ratio: 16 / 10;
-	border-radius: 0;
+/* The image bleeds to the card edge; the card clips it, so no radius here. */
+.academia-card__media {
 	display: block;
+	line-height: 0;
+	/* A hairline under the image separates it from the body without a second
+	 * border showing through the card's rounded corners. */
+	border-bottom: 1px solid var(--wp--preset--color--divider);
+}
+
+.academia-card__media img {
+	aspect-ratio: 16 / 10;
+	display: block;
+	height: auto;
 	object-fit: cover;
 	width: 100%;
+}
+
+.academia-card__body {
+	display: flex;
+	flex-direction: column;
+	/* tight: these three lines are one thought */
+	gap: 0.5rem;
+	padding: var(--wp--preset--spacing--40) var(--wp--preset--spacing--40) 0;
+}
+
+.academia-card__eyebrow {
+	margin: 0 0 0.25rem;
+}
+
+.academia-card__title {
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: var(--wp--preset--font-size--large);
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.25;
+	margin: 0;
+}
+
+.academia-card__title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.academia-card__title a:hover,
+.academia-card__title a:focus-visible {
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+}
+
+.academia-card__summary {
+	color: var(--wp--preset--color--muted);
+	margin: 0;
+}
+
+/* Group two: the measurable facts. Sits away from the summary, close together
+ * internally, and takes the free space so the foot is pinned to the bottom. */
+.academia-card__facts {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	gap: 0.4rem;
+	padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--40) 0;
+}
+
+.academia-card__facts > * {
+	margin: 0;
+}
+
+/* Group three: the commitment, below a hairline so it reads as a footer
+ * rather than another line of detail. */
+.academia-card__foot {
+	align-items: center;
+	border-top: 1px solid var(--wp--preset--color--divider);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 1rem;
+	justify-content: space-between;
+	margin-top: var(--wp--preset--spacing--40);
+	padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--40);
+}
+
+.academia-card__foot .academia-price {
+	margin: 0;
+}
+
+.academia-card__action {
+	border: 1px solid color-mix(in srgb, var(--wp--preset--color--primary) 40%, transparent);
+	border-radius: 12px;
+	color: var(--wp--preset--color--primary);
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 600;
+	line-height: 1;
+	padding: 0.7rem 1.1rem;
+	text-decoration: none;
+	transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+	white-space: nowrap;
+}
+
+.academia-card__action:hover,
+.academia-card__action:focus-visible {
+	background: var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
 }
 
 /* The meta row: duration, level, lessons. Wraps rather than truncating. */
@@ -259,7 +490,7 @@ Photographs in assets/images/*.avif
 	display: flex;
 	flex-wrap: wrap;
 	font-size: var(--wp--preset--font-size--small);
-	gap: 0.4rem 1rem;
+	gap: 0.35rem 0.9rem;
 	list-style: none;
 	margin: 0;
 	padding: 0;
@@ -275,7 +506,7 @@ Photographs in assets/images/*.avif
 .academia-meta svg {
 	flex: none;
 	height: 1em;
-	opacity: 0.75;
+	opacity: 0.7;
 	width: 1em;
 }
 
@@ -305,29 +536,6 @@ a.academia-chip:focus {
 	color: var(--wp--preset--color--accent);
 }
 
-/* A card title is a link, and global styles underline every link. On a card
- * the whole surface already reads as clickable, so the underline is noise —
- * it comes back on hover and focus, where it is the affordance. */
-.academia-course-card h3 a,
-.academia-course-card h2 a {
-	text-decoration: none;
-}
-
-.academia-course-card h3 a:hover,
-.academia-course-card h3 a:focus-visible,
-.academia-course-card h2 a:hover,
-.academia-course-card h2 a:focus-visible {
-	text-decoration: underline;
-	text-decoration-thickness: 2px;
-	text-underline-offset: 3px;
-}
-
-/* The whole card lifts on hover, so the title colour should not also change. */
-.academia-course-card h3 a {
-	color: inherit;
-}
-
-/* The price sits on the card's last line, aligned with the enrol button. */
 .academia-price {
 	font-family: var(--wp--preset--font-family--heading);
 	font-size: var(--wp--preset--font-size--large);
@@ -354,7 +562,13 @@ a.academia-chip:focus {
 	line-height: 1;
 }
 
-.academia-stars + span {
+.academia-rating {
+	align-items: center;
+	display: flex;
+	gap: 0.4rem;
+}
+
+.academia-rating > span:last-child {
 	color: var(--wp--preset--color--muted);
 	font-size: var(--wp--preset--font-size--small);
 }
