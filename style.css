@@ -7,7 +7,7 @@ Description: A block theme for schools, universities, academies and online cours
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Update URI: https://updates.colorlib.com/theme/academia.json
@@ -95,6 +95,40 @@ Photographs in assets/images/*.avif
 :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
 	outline: 2px solid var(--wp--preset--color--primary);
 	outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------------------
+ * The site's top-level regions meet flush.
+ *
+ * `.wp-site-blocks` is a flow container, so WordPress applies the root
+ * blockGap as `margin-block-start` on every top-level block after the first.
+ * That put a 20px strip of page background between the header and the content,
+ * and between the content and the footer — invisible where a white section
+ * happens to sit next to them, and an obvious white band where the gradient
+ * call-to-action meets the dark footer.
+ *
+ * Sections carry their own top and bottom padding, so these regions need no
+ * gap between them at all.
+ * ---------------------------------------------------------------------- */
+.wp-site-blocks > header,
+.wp-site-blocks > main,
+.wp-site-blocks > footer,
+.wp-site-blocks > .wp-block-template-part {
+	margin-block-end: 0;
+	margin-block-start: 0;
+}
+
+/* The same applies inside the content wrapper: the first section must start at
+ * the top edge and the last must end at the bottom, or the flush regions above
+ * simply move the gap one level down. */
+.wp-site-blocks > main > :first-child,
+.wp-block-post-content > :first-child {
+	margin-block-start: 0;
+}
+
+.wp-site-blocks > main > :last-child,
+.wp-block-post-content > :last-child {
+	margin-block-end: 0;
 }
 
 /* -------------------------------------------------------------------------

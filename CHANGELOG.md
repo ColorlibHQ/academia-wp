@@ -156,3 +156,20 @@ sound; its application was not.
 - A bottom bar with the copyright on one side and Privacy / Terms /
   Accessibility on the other, separated by thin rules.
 
+## [1.0.3] — 2026-09-11
+
+### Fixed
+
+- **A 20px strip of page background sat between the header and the content, and
+  between the content and the footer.** `.wp-site-blocks` is a flow container,
+  so WordPress applies the root `blockGap` as `margin-block-start` on every
+  top-level region. It was invisible wherever a white section happened to sit
+  next to it and an obvious white band where the gradient call to action met the
+  dark footer. The regions are flush now, at every breakpoint, and sections keep
+  supplying their own padding.
+- **Templates opened tighter than they closed.** Every content template used
+  64px of top padding against 96px at the bottom — an asymmetry inherited from
+  Unapp — while the section patterns and the course templates used 96/96. So a
+  blog or search page opened on a different rhythm from every section beneath
+  it. All fourteen templates are 96/96 now, matching `SECTION_PAD`.
+

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-**Academia 1.0.2** is a Colorlib **WordPress block theme** (Full Site Editing) for
+**Academia 1.0.3** is a Colorlib **WordPress block theme** (Full Site Editing) for
 education sites, plus a companion plugin. 53 patterns, 18 templates, 8 colour
 palettes × 5 typography presets, 6 one-click starter sites, text domain
 `academia`. It is **not** a static HTML template — the Colorlib R2
@@ -230,6 +230,15 @@ keeps the no-JS path working.
   static cards was deleted rather than restyled: two card designs that must stay
   in visual sync is how inconsistency starts. The dynamic grid plus the plugin's
   demo importer covers "a site with no courses yet".
+- **`.wp-site-blocks` applies the root `blockGap` between the top-level
+  regions.** It is a flow container, so header, main and footer each get a
+  `margin-block-start` — a 20px strip of page background that is invisible next
+  to a white section and an obvious white band where the gradient CTA meets the
+  dark footer. `style.css` zeroes it; sections supply their own padding.
+- **Every content template is 70/70, matching `SECTION_PAD`.** They arrived
+  from Unapp on 60/70 — opening 64px tight and closing 96px loose — so a blog
+  or search page opened on a different rhythm from every section under it. If
+  you add a template, use 70/70.
 - **A `wp:list` with no class inherits the browser's bullets and 40px indent.**
   The footer's three link columns shipped like that — bulleted, indented lists
   on a dark ground, and the single thing that made the footer look unfinished.
