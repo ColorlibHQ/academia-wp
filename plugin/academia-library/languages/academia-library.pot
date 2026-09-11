@@ -1,0 +1,486 @@
+# Copyright (C) 2026 Colorlib
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Academia Library 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/academia-library\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-09-11T12:25:41+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: academia-library\n"
+
+#. Plugin Name of the plugin
+#: academia-library.php
+msgid "Academia Library"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: academia-library.php
+msgid "https://colorlib.com/wp/themes/academia/"
+msgstr ""
+
+#. Description of the plugin
+#: academia-library.php
+msgid "Adds a Course content type to the Academia theme — levels, durations, lesson counts, prices, instructors and ratings — plus a course browser that filters and sorts without reloading the page. Course content stays in your database if you change theme."
+msgstr ""
+
+#. Author of the plugin
+#: academia-library.php
+msgid "Colorlib"
+msgstr ""
+
+#. Author URI of the plugin
+#: academia-library.php
+msgid "https://colorlib.com/"
+msgstr ""
+
+#: academia-library.php:55
+msgctxt "Post type general name"
+msgid "Courses"
+msgstr ""
+
+#: academia-library.php:56
+msgctxt "Post type singular name"
+msgid "Course"
+msgstr ""
+
+#: academia-library.php:57
+msgctxt "Admin Menu text"
+msgid "Courses"
+msgstr ""
+
+#: academia-library.php:58
+msgid "Add course"
+msgstr ""
+
+#: academia-library.php:59
+msgid "Edit course"
+msgstr ""
+
+#: academia-library.php:60
+msgid "New course"
+msgstr ""
+
+#: academia-library.php:61
+msgid "View course"
+msgstr ""
+
+#: academia-library.php:62
+msgid "Search courses"
+msgstr ""
+
+#: academia-library.php:63
+msgid "No courses found"
+msgstr ""
+
+#: academia-library.php:64
+msgid "No courses in the bin"
+msgstr ""
+
+#: academia-library.php:65
+#: demo.php:304
+msgid "Course image"
+msgstr ""
+
+#: academia-library.php:66
+msgid "Set course image"
+msgstr ""
+
+#: academia-library.php:67
+msgid "Remove course image"
+msgstr ""
+
+#: academia-library.php:68
+msgid "Course archive"
+msgstr ""
+
+#: academia-library.php:83
+msgctxt "Taxonomy general name"
+msgid "Subjects"
+msgstr ""
+
+#: academia-library.php:84
+msgctxt "Taxonomy singular name"
+msgid "Subject"
+msgstr ""
+
+#: academia-library.php:85
+msgid "Add subject"
+msgstr ""
+
+#: academia-library.php:86
+msgid "Edit subject"
+msgstr ""
+
+#: academia-library.php:87
+msgid "Search subjects"
+msgstr ""
+
+#: academia-library.php:98
+msgctxt "Taxonomy general name"
+msgid "Levels"
+msgstr ""
+
+#: academia-library.php:99
+msgctxt "Taxonomy singular name"
+msgid "Level"
+msgstr ""
+
+#: academia-library.php:100
+msgid "Add level"
+msgstr ""
+
+#: academia-library.php:101
+msgid "Edit level"
+msgstr ""
+
+#: academia-library.php:102
+msgid "Search levels"
+msgstr ""
+
+#: academia-library.php:128
+#: admin.php:125
+msgid "Duration"
+msgstr ""
+
+#: academia-library.php:129
+msgid "For example “8 weeks” or “12 hours”."
+msgstr ""
+
+#: academia-library.php:134
+msgid "Lessons"
+msgstr ""
+
+#: academia-library.php:135
+msgid "How many lessons or sessions the course contains."
+msgstr ""
+
+#: academia-library.php:140
+#: admin.php:124
+#: filter.php:137
+msgid "Level"
+msgstr ""
+
+#: academia-library.php:141
+msgid "Used only when no Level taxonomy term is set."
+msgstr ""
+
+#: academia-library.php:146
+#: admin.php:126
+#: filter.php:151
+msgid "Price"
+msgstr ""
+
+#: academia-library.php:147
+msgid "Numbers only. Leave empty for a free course."
+msgstr ""
+
+#: academia-library.php:152
+msgid "Offer price"
+msgstr ""
+
+#: academia-library.php:153
+msgid "Shown with the full price struck through."
+msgstr ""
+
+#: academia-library.php:158
+msgid "Instructor"
+msgstr ""
+
+#: academia-library.php:159
+msgid "The name shown on the course card."
+msgstr ""
+
+#: academia-library.php:164
+msgid "Rating"
+msgstr ""
+
+#: academia-library.php:165
+msgid "Between 0 and 5. Leave empty to hide the stars."
+msgstr ""
+
+#: academia-library.php:170
+msgid "Reviews"
+msgstr ""
+
+#: academia-library.php:171
+msgid "How many ratings the average is based on."
+msgstr ""
+
+#: admin.php:22
+msgid "Course details"
+msgstr ""
+
+#: admin.php:165
+msgid "Free"
+msgstr ""
+
+#: demo.php:32
+msgid "Foundations of interface design"
+msgstr ""
+
+#: demo.php:33
+msgid "Grids, type and colour — the decisions behind interfaces people trust."
+msgstr ""
+
+#: demo.php:34
+#: demo.php:48
+#: demo.php:62
+msgid "Design"
+msgstr ""
+
+#: demo.php:35
+#: demo.php:91
+#: demo.php:133
+msgid "Beginner"
+msgstr ""
+
+#: demo.php:36
+#: demo.php:134
+msgid "8 weeks"
+msgstr ""
+
+#: demo.php:39
+#: demo.php:53
+msgid "Dana Okoye"
+msgstr ""
+
+#: demo.php:46
+msgid "Typography for screens"
+msgstr ""
+
+#: demo.php:47
+msgid "Choosing, pairing and setting type that stays readable at every size."
+msgstr ""
+
+#: demo.php:49
+#: demo.php:77
+#: demo.php:119
+msgid "Intermediate"
+msgstr ""
+
+#: demo.php:50
+#: demo.php:106
+msgid "6 weeks"
+msgstr ""
+
+#: demo.php:60
+msgid "Accessible by default"
+msgstr ""
+
+#: demo.php:61
+msgid "Build interfaces that work for everyone, and prove that they do."
+msgstr ""
+
+#: demo.php:63
+#: demo.php:105
+#: demo.php:147
+msgid "Advanced"
+msgstr ""
+
+#: demo.php:64
+#: demo.php:148
+msgid "5 weeks"
+msgstr ""
+
+#: demo.php:67
+#: demo.php:123
+#: demo.php:137
+msgid "Priya Raman"
+msgstr ""
+
+#: demo.php:74
+msgid "JavaScript for the web"
+msgstr ""
+
+#: demo.php:75
+msgid "From the language itself to shipping an app people can actually use."
+msgstr ""
+
+#: demo.php:76
+#: demo.php:90
+#: demo.php:104
+msgid "Development"
+msgstr ""
+
+#: demo.php:78
+msgid "12 weeks"
+msgstr ""
+
+#: demo.php:81
+#: demo.php:95
+#: demo.php:109
+msgid "Marcus Hale"
+msgstr ""
+
+#: demo.php:88
+msgid "HTML and CSS from scratch"
+msgstr ""
+
+#: demo.php:89
+msgid "The two languages the whole web is built from, properly this time."
+msgstr ""
+
+#: demo.php:92
+#: demo.php:120
+msgid "10 weeks"
+msgstr ""
+
+#: demo.php:102
+msgid "Building for performance"
+msgstr ""
+
+#: demo.php:103
+msgid "Measure what is slow, fix the part that matters, and keep it fixed."
+msgstr ""
+
+#: demo.php:116
+msgid "Analysis with Python"
+msgstr ""
+
+#: demo.php:117
+msgid "Clean a messy dataset, ask it a question, and defend the answer."
+msgstr ""
+
+#: demo.php:118
+#: demo.php:132
+#: demo.php:146
+msgid "Data & analytics"
+msgstr ""
+
+#: demo.php:130
+msgid "Statistics without fear"
+msgstr ""
+
+#: demo.php:131
+msgid "The handful of ideas that make the rest of statistics make sense."
+msgstr ""
+
+#: demo.php:144
+msgid "Telling the story in the data"
+msgstr ""
+
+#: demo.php:145
+msgid "Charts that answer a question, and the judgement to pick which one."
+msgstr ""
+
+#: demo.php:151
+msgid "Tomas Bergström"
+msgstr ""
+
+#. translators: %s: course excerpt.
+#: demo.php:221
+#, php-format
+msgid "%s This page is demo content — replace it with your own syllabus."
+msgstr ""
+
+#: demo.php:226
+msgid "What you will learn"
+msgstr ""
+
+#: demo.php:231
+msgid "The core ideas, in the order they build on each other"
+msgstr ""
+
+#: demo.php:232
+msgid "A weekly workshop applying them to your own work"
+msgstr ""
+
+#: demo.php:233
+msgid "An assessed piece you can show an employer"
+msgstr ""
+
+#: demo.php:327
+#: demo.php:348
+msgid "Academia demo courses"
+msgstr ""
+
+#: demo.php:328
+msgid "Academia courses"
+msgstr ""
+
+#: demo.php:341
+#: demo.php:385
+msgid "You are not allowed to do that."
+msgstr ""
+
+#. translators: %d: number of courses created.
+#: demo.php:355
+#, php-format
+msgid "%d course created."
+msgid_plural "%d courses created."
+msgstr[0] ""
+msgstr[1] ""
+
+#: demo.php:360
+msgid "Academia's course sections are dynamic, so a site with no courses shows empty states. This creates nine example courses across three subjects and three levels, so every section has something to render while you build."
+msgstr ""
+
+#. translators: %d: number of published courses.
+#: demo.php:363
+#, php-format
+msgid "You currently have %d published course."
+msgid_plural "You currently have %d published courses."
+msgstr[0] ""
+msgstr[1] ""
+
+#: demo.php:368
+msgid "Demo courses have been created before. Running this again only fills in any that are missing — nothing you have edited is overwritten."
+msgstr ""
+
+#: demo.php:374
+msgid "Create demo courses"
+msgstr ""
+
+#: filter.php:117
+msgid "Search"
+msgstr ""
+
+#: filter.php:118
+msgid "Course or subject"
+msgstr ""
+
+#: filter.php:123
+msgid "Subject"
+msgstr ""
+
+#: filter.php:125
+msgid "All subjects"
+msgstr ""
+
+#: filter.php:139
+msgid "Any level"
+msgstr ""
+
+#: filter.php:149
+msgid "Newest first"
+msgstr ""
+
+#: filter.php:150
+msgid "A to Z"
+msgstr ""
+
+#: filter.php:152
+msgid "Best rated"
+msgstr ""
+
+#: filter.php:155
+msgid "Sort by"
+msgstr ""
+
+#: filter.php:165
+msgid "Apply filters"
+msgstr ""
+
+#. translators: %s: number of courses.
+#: filter.php:187
+#, php-format
+msgid "%s course"
+msgid_plural "%s courses"
+msgstr[0] ""
+msgstr[1] ""

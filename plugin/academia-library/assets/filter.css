@@ -1,0 +1,22 @@
+/*
+ * The submit button is present in the markup and hidden only once the script
+ * has run — that ordering is what keeps the no-JS path working.
+ */
+.academia-course-browser.is-enhanced .academia-filter-submit {
+	display: none;
+}
+
+.academia-results.is-loading {
+	opacity: 0.5;
+	transition: opacity 0.15s ease;
+}
+
+.academia-results[aria-busy="true"] {
+	cursor: progress;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.academia-results.is-loading {
+		transition: none;
+	}
+}

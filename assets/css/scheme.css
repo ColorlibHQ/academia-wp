@@ -1,0 +1,98 @@
+/**
+ * Dark reading scheme.
+ *
+ * The neutrals swap to a dark set; the palette's own primary, primary-deep and
+ * accent are lightened rather than replaced, so an Emerald site stays green and
+ * a Navy site stays blue in the dark.
+ *
+ * The lightened values are computed on <html>, where the palette still holds
+ * its original values, and consumed on <body>, where the overrides apply.
+ * Computing and consuming on the same element would make each custom property
+ * depend on itself, which is invalid and silently drops the declaration.
+ */
+
+html {
+	/* 52% is the most colour that still clears 4.5:1 on the dark ground for
+	   every palette the theme ships — Mono's primary is black, which needs the
+	   most lift, and Midnight's is already light, which needs the least. */
+	--academia-primary-lift: color-mix(in srgb, var(--wp--preset--color--primary) 52%, #ffffff);
+	--academia-primary-deep-lift: color-mix(in srgb, var(--wp--preset--color--primary-deep) 72%, #ffffff);
+	--academia-teal-light-lift: color-mix(in srgb, var(--wp--preset--color--teal-light) 84%, #ffffff);
+	--academia-accent-lift: color-mix(in srgb, var(--wp--preset--color--accent) 52%, #ffffff);
+}
+
+html[data-academia-scheme="dark"] body {
+	--wp--preset--color--base: #12141c;
+	--wp--preset--color--contrast: #f3f4f8;
+	--wp--preset--color--surface: #1a1d28;
+	--wp--preset--color--divider: #2b3040;
+	--wp--preset--color--muted: #a9b0c0;
+	--wp--preset--color--dark: #0b0d13;
+	--wp--preset--color--primary: var(--academia-primary-lift);
+	--wp--preset--color--primary-deep: var(--academia-primary-deep-lift);
+	--wp--preset--color--teal-light: var(--academia-teal-light-lift);
+	--wp--preset--color--accent: var(--academia-accent-lift);
+
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+}
+
+/* Sections that carry their own dark ground — the gradient bands, the dark
+   footer, the section-dark style — write their text as `base` and their button
+   labels as `contrast`, meaning "light on dark". Swapping those two globally
+   inverts them, so inside such a section the pair goes back to its light-mode
+   meaning. */
+html[data-academia-scheme="dark"] body :is(
+	[class*="-gradient-background"],
+	.has-dark-background-color,
+	.is-style-section-dark,
+	.wp-block-cover
+) {
+	--wp--preset--color--base: #ffffff;
+	--wp--preset--color--contrast: #12141c;
+}
+
+/* Buttons take their text from `contrast`, which is now light; on the lifted
+   primary that would be light on light, so pin it back to the dark ground. */
+html[data-academia-scheme="dark"] body .wp-element-button,
+html[data-academia-scheme="dark"] body .wp-block-button__link {
+	color: #12141c;
+}
+
+html[data-academia-scheme="dark"] body .wp-block-button.is-style-outline .wp-block-button__link {
+	color: var(--wp--preset--color--contrast);
+}
+
+/* Images and covers are a touch bright against a dark page. */
+html[data-academia-scheme="dark"] body .wp-block-image img {
+	filter: brightness(0.92);
+}
+
+/* The toggle itself. */
+.academia-scheme-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.academia-scheme-toggle .academia-scheme-toggle__dark {
+	display: none;
+}
+
+html[data-academia-scheme="dark"] .academia-scheme-toggle .academia-scheme-toggle__dark {
+	display: inline;
+}
+
+html[data-academia-scheme="dark"] .academia-scheme-toggle .academia-scheme-toggle__light {
+	display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+	html:not([data-academia-scheme]) .academia-scheme-toggle .academia-scheme-toggle__dark {
+		display: inline;
+	}
+
+	html:not([data-academia-scheme]) .academia-scheme-toggle .academia-scheme-toggle__light {
+		display: none;
+	}
+}
