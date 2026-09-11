@@ -117,3 +117,42 @@ sound; its application was not.
 - Starter sites no longer create a page whose slug shadows a registered
   post-type archive — the academy starter's "Courses" page was unreachable
   behind the course archive. The menu links to the archive instead.
+
+## [1.0.2] — 2026-09-11
+
+### Fixed
+
+- **The footer link lists rendered with the browser's disc bullets and a 40px
+  indent.** They were bare `wp:list` blocks with no class, so a dark footer
+  showed three bulleted, indented lists — the single thing that made it look
+  unfinished. They now have a real class and are styled properly.
+- **The footer's brand column had no internal spacing at all** — measured gaps
+  of 1px, -1px and 1px between the site title, tagline, contact facts and
+  social row. WordPress's flow layout spaces children with margins, and the
+  footer resets those to zero, so the column's `blockGap` had no effect. Both
+  the brand and the link columns are now explicit flex columns with real gaps.
+- **Column headings read as slightly-bolder links** at 14px/700 with no
+  tracking. They are now a proper eyebrow: small, uppercase, tracked, and
+  quieter than the links beneath them.
+- **The default footer was still Unapp's**, including its SaaS copy about "one
+  calm workspace for planning, files and conversations" — which is what a fresh
+  install showed before applying a starter. It is now generated from the same
+  function as the vertical footers, so there is one implementation.
+- **The starter header logic could never match its own default.** It compared
+  a starter's CTA against the literal `Get Premium` while the header pattern
+  had been changed to `Enrol now`, so every starter wrote a customised header
+  template part it did not need — including the academy starter, whose CTA *is*
+  the default.
+- Four footer columns inside 782px left the link columns ~119px wide, wrapping
+  "Fees and funding" over two lines. Between the stacking breakpoint and 1000px
+  the brand now takes a full row and the three link columns share the next.
+- The sidebar's call to action said "Start free trial".
+
+### Added
+
+- Contact facts (email, phone, address) in the footer's brand column, with
+  palette-coloured icons — the column previously held only a title, a tagline
+  and four 16px social icons, which left the footer with nothing to anchor it.
+- A bottom bar with the copyright on one side and Privacy / Terms /
+  Accessibility on the other, separated by thin rules.
+

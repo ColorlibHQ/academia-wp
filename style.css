@@ -7,7 +7,7 @@ Description: A block theme for schools, universities, academies and online cours
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Update URI: https://updates.colorlib.com/theme/academia.json
@@ -908,11 +908,189 @@ a.academia-chip:focus {
 	border-top: 1px solid var(--wp--preset--color--divider);
 }
 
-/* The footer note takes its colour from here rather than an inline rgba():
+/* -------------------------------------------------------------------------
+ * Footer
+ *
+ * The footer note takes its colour from here rather than an inline rgba():
  * the style engine drops rgba() from a dynamic block's colour attribute, so
- * core/site-tagline renders has-text-color with no style at all. */
+ * core/site-tagline renders has-text-color with no style at all.
+ * ---------------------------------------------------------------------- */
 .academia-footer-note {
-	color: rgba(255, 255, 255, 0.74);
+	color: rgba(255, 255, 255, 0.72);
+	margin: 0;
+}
+
+/* The brand column: title, tagline, contact facts, social. Each is a distinct
+ * thing, so they get real separation — and the contact block sits further from
+ * the tagline than its own rows are from each other. */
+.academia-footer-brand {
+	gap: 1.1rem !important;
+}
+
+.academia-footer-brand .academia-footer-contact {
+	margin-top: 0.2rem;
+}
+
+.academia-footer-brand .wp-block-social-links {
+	margin-top: 0.4rem;
+}
+
+/* Social icons at 16px read as specks on a dark ground. */
+.academia-footer-brand .wp-block-social-links .wp-block-social-link {
+	margin: 0;
+}
+
+.academia-footer-brand .wp-block-social-links a {
+	height: 20px;
+	opacity: 0.8;
+	transition: opacity 0.15s ease;
+	width: 20px;
+}
+
+.academia-footer-brand .wp-block-social-links a:hover,
+.academia-footer-brand .wp-block-social-links a:focus-visible {
+	opacity: 1;
+}
+
+.academia-footer-brand .wp-block-social-links svg {
+	height: 20px;
+	width: 20px;
+}
+
+/* A link column: the heading sits away from its list, not on top of it. */
+.academia-footer-col {
+	gap: 1rem !important;
+}
+
+/* A column heading, not a bolder link. Small, tracked and quieter than the
+ * links below it, so the eye reads "group label" before it reads the group. */
+.academia-footer-heading {
+	color: rgba(255, 255, 255, 0.55) !important;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+/* The link lists. Without this they are `wp-block-list` with nothing else, so
+ * the browser gives them disc bullets and a 40px indent — a bulleted, indented
+ * list on a dark ground, which is what made the first footer look amateur. */
+.academia-footer-links {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.academia-footer-links li {
+	margin: 0;
+}
+
+.academia-footer-links a {
+	color: rgba(255, 255, 255, 0.78);
+	font-size: 0.9375rem;
+	text-decoration: none;
+	transition: color 0.15s ease;
+}
+
+.academia-footer-links a:hover,
+.academia-footer-links a:focus-visible {
+	color: var(--wp--preset--color--base);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+/* The contact facts give the brand column something to hold. Icons inherit
+ * currentColor, so they stay legible in every palette. */
+.academia-footer-contact {
+	display: flex;
+	flex-direction: column;
+	gap: 0.65rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.academia-footer-contact li {
+	align-items: flex-start;
+	color: rgba(255, 255, 255, 0.78);
+	display: flex;
+	font-size: 0.9375rem;
+	gap: 0.65rem;
+	line-height: 1.5;
+	margin: 0;
+}
+
+.academia-footer-contact svg {
+	color: var(--wp--preset--color--teal-light);
+	flex: none;
+	height: 1.05rem;
+	margin-top: 0.15rem;
+	width: 1.05rem;
+}
+
+/* The bottom bar's legal links: one row, separated by thin rules. */
+.academia-footer-legal {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 1rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.academia-footer-legal li {
+	margin: 0;
+}
+
+.academia-footer-legal li + li {
+	border-inline-start: 1px solid rgba(255, 255, 255, 0.18);
+	padding-inline-start: 1rem;
+}
+
+.academia-footer-legal a {
+	color: rgba(255, 255, 255, 0.62);
+	font-size: 0.8125rem;
+	text-decoration: none;
+}
+
+.academia-footer-legal a:hover,
+.academia-footer-legal a:focus-visible {
+	color: var(--wp--preset--color--base);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+/* Four columns inside 782px leaves the link columns ~119px wide, which wraps
+ * "Fees and funding" onto two lines. Between the stacking breakpoint and
+ * 1000px the footer goes two-up instead: the brand takes a full row, the three
+ * link columns share the next. */
+@media (min-width: 782px) and (max-width: 999px) {
+	footer .wp-block-columns.alignwide {
+		flex-wrap: wrap !important;
+	}
+
+	footer .wp-block-columns.alignwide > .academia-footer-brand {
+		flex-basis: 100% !important;
+		margin-bottom: var(--wp--preset--spacing--50);
+	}
+
+	/* flex-basis as a percentage plus the 40px gap overflows the row, so the
+	 * third column wraps and then grows to full width on its own. A zero basis
+	 * with grow lets all three share whatever is left, gap included. */
+	footer .wp-block-columns.alignwide > .academia-footer-col {
+		flex: 1 1 0 !important;
+		min-width: 0;
+	}
+}
+
+/* Social icons sit level with the text above them, not inset by the block's
+ * own default gap. */
+footer .wp-block-social-links {
+	margin: 0;
 }
 
 /* core's is-style-squared targets the button wrapper while global styles put

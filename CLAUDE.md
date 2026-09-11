@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-**Academia 1.0.1** is a Colorlib **WordPress block theme** (Full Site Editing) for
+**Academia 1.0.2** is a Colorlib **WordPress block theme** (Full Site Editing) for
 education sites, plus a companion plugin. 53 patterns, 18 templates, 8 colour
 palettes × 5 typography presets, 6 one-click starter sites, text domain
 `academia`. It is **not** a static HTML template — the Colorlib R2
@@ -230,6 +230,19 @@ keeps the no-JS path working.
   static cards was deleted rather than restyled: two card designs that must stay
   in visual sync is how inconsistency starts. The dynamic grid plus the plugin's
   demo importer covers "a site with no courses yet".
+- **A `wp:list` with no class inherits the browser's bullets and 40px indent.**
+  The footer's three link columns shipped like that — bulleted, indented lists
+  on a dark ground, and the single thing that made the footer look unfinished.
+  Any list the theme styles itself needs a real class.
+- **A flow-layout column's `blockGap` does nothing once you reset child
+  margins.** WordPress spaces flow children with `margin-block-start`; the
+  footer's `margin: 0` resets overrode it, so the brand column's children sat
+  1px apart. Use an explicit `layout: flex` with a gap where the spacing
+  matters.
+- **Keep a starter's CTA default in sync with `patterns/header.php`.**
+  `academia_apply_starter_header()` compares against a literal; when the header
+  label changed and the literal did not, every starter wrote a header override
+  it did not need.
 - **Every niche owns its whole page.** A starter must not borrow a section whose
   copy is written for another kind of site. ⚠ **Currently violated**: all six
   demo homes open with `hero-academy`, whose copy is written for the online

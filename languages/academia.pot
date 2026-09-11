@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-11T12:52:37+00:00\n"
+"POT-Creation-Date: 2026-09-11T13:01:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: academia\n"
@@ -477,6 +477,7 @@ msgid "The default: a course catalogue with levels and prices, the tutors who te
 msgstr ""
 
 #: inc/starter-sites.php:35
+#: inc/starter-sites.php:819
 #: patterns/header.php:38
 msgctxt "Header call-to-action button"
 msgid "Enrol now"
@@ -503,11 +504,11 @@ msgstr ""
 #: inc/starter-sites.php:95
 #: inc/starter-sites.php:163
 #: inc/starter-sites.php:193
-#: patterns/footer-academy.php:93
-#: patterns/footer-bootcamp.php:99
-#: patterns/footer-school.php:99
-#: patterns/footer-university.php:102
-#: patterns/footer.php:64
+#: patterns/footer-academy.php:96
+#: patterns/footer-bootcamp.php:102
+#: patterns/footer-school.php:102
+#: patterns/footer-university.php:105
+#: patterns/footer.php:96
 msgid "Contact"
 msgstr ""
 
@@ -530,8 +531,9 @@ msgstr ""
 
 #: inc/starter-sites.php:83
 #: inc/starter-sites.php:121
-#: patterns/footer-school.php:70
-#: patterns/footer-university.php:93
+#: patterns/footer-school.php:73
+#: patterns/footer-university.php:96
+#: patterns/footer.php:102
 msgid "Admissions"
 msgstr ""
 
@@ -540,7 +542,7 @@ msgid "Faculty"
 msgstr ""
 
 #: inc/starter-sites.php:91
-#: patterns/footer-university.php:79
+#: patterns/footer-university.php:82
 msgid "Campus"
 msgstr ""
 
@@ -558,7 +560,7 @@ msgid "Book a visit"
 msgstr ""
 
 #: inc/starter-sites.php:113
-#: patterns/footer-school.php:47
+#: patterns/footer-school.php:50
 msgid "Classes"
 msgstr ""
 
@@ -589,23 +591,24 @@ msgid "Join a cohort"
 msgstr ""
 
 #: inc/starter-sites.php:147
-#: patterns/footer-bootcamp.php:47
+#: patterns/footer-bootcamp.php:50
 msgid "Syllabus"
 msgstr ""
 
 #: inc/starter-sites.php:151
-#: patterns/footer-academy.php:76
-#: patterns/footer-bootcamp.php:53
+#: patterns/footer-academy.php:79
+#: patterns/footer-bootcamp.php:56
+#: patterns/footer.php:79
 msgid "Outcomes"
 msgstr ""
 
 #: inc/starter-sites.php:155
-#: patterns/footer-bootcamp.php:56
+#: patterns/footer-bootcamp.php:59
 msgid "Mentors"
 msgstr ""
 
 #: inc/starter-sites.php:159
-#: patterns/footer-bootcamp.php:73
+#: patterns/footer-bootcamp.php:76
 msgid "Financing"
 msgstr ""
 
@@ -664,7 +667,7 @@ msgid "The starter site’s home page pattern could not be loaded."
 msgstr ""
 
 #: inc/starter-sites.php:669
-#: patterns/footer-bootcamp.php:96
+#: patterns/footer-bootcamp.php:99
 msgid "Blog"
 msgstr ""
 
@@ -676,85 +679,80 @@ msgstr ""
 msgid "Footer"
 msgstr ""
 
-#: inc/starter-sites.php:815
-msgctxt "Header call-to-action button"
-msgid "Get Premium"
-msgstr ""
-
-#: inc/starter-sites.php:842
+#: inc/starter-sites.php:846
 msgid "Header"
 msgstr ""
 
-#: inc/starter-sites.php:869
-#: inc/starter-sites.php:870
+#: inc/starter-sites.php:873
+#: inc/starter-sites.php:874
 msgid "Starter Sites"
 msgstr ""
 
-#: inc/starter-sites.php:885
+#: inc/starter-sites.php:889
 msgid "You are not allowed to change the site design."
 msgstr ""
 
-#: inc/starter-sites.php:916
+#: inc/starter-sites.php:920
 msgid "Set up your site"
 msgstr ""
 
-#: inc/starter-sites.php:949
+#: inc/starter-sites.php:953
 msgid "Academia starter sites"
 msgstr ""
 
-#: inc/starter-sites.php:951
+#: inc/starter-sites.php:955
 msgid "Each starter builds a complete site for one kind of business: a colour palette, a typeface, a home page and its supporting pages, and a matching menu. Setting one up takes three short steps — the starter, your name and look, then anything it needs installing. Your existing pages are never deleted."
 msgstr ""
 
 #. translators: %s: link to the site front page.
-#: inc/starter-sites.php:959
+#: inc/starter-sites.php:963
 #, php-format
 msgid "Starter site applied. <a href=\"%s\">View your site</a>."
 msgstr ""
 
-#: inc/starter-sites.php:965
+#: inc/starter-sites.php:969
 msgid "That starter site could not be applied. Please try again."
 msgstr ""
 
 #. translators: %s: starter site name.
-#: inc/starter-sites.php:988
+#: inc/starter-sites.php:992
 #, php-format
 msgid "The home page the %s starter builds"
 msgstr ""
 
-#: inc/starter-sites.php:995
+#: inc/starter-sites.php:999
 msgid "Applied"
 msgstr ""
 
 #. translators: %d: number of pages the starter creates.
-#: inc/starter-sites.php:1007
+#: inc/starter-sites.php:1011
 #, php-format
 msgid "Creates %d page"
 msgid_plural "Creates %d pages"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/starter-sites.php:1014
+#: inc/starter-sites.php:1018
 msgid "Set up again"
 msgstr ""
 
-#: inc/starter-sites.php:1014
+#: inc/starter-sites.php:1018
 msgid "Set up this starter"
 msgstr ""
 
-#: inc/starter-sites.php:1021
+#: inc/starter-sites.php:1025
 msgid "Apply without setup"
 msgstr ""
 
-#: inc/starter-sites.php:1041
+#: inc/starter-sites.php:1045
 msgid "Choose a starter"
 msgstr ""
 
-#: inc/starter-sites.php:1042
+#: inc/starter-sites.php:1046
 msgid "Name and look"
 msgstr ""
 
-#: inc/starter-sites.php:1043
+#: inc/starter-sites.php:1047
 msgid "Finish"
 msgstr ""
 
@@ -848,14 +846,29 @@ msgid "Contact details beside a form from your form plugin."
 msgstr ""
 
 #: patterns/contact-split.php:30
+#: patterns/footer-academy.php:30
+#: patterns/footer-bootcamp.php:30
+#: patterns/footer-school.php:30
+#: patterns/footer-university.php:30
+#: patterns/footer.php:30
 msgid "hello@example.com"
 msgstr ""
 
 #: patterns/contact-split.php:33
+#: patterns/footer-academy.php:30
+#: patterns/footer-bootcamp.php:30
+#: patterns/footer-school.php:30
+#: patterns/footer-university.php:30
+#: patterns/footer.php:30
 msgid "+1 392 3929 210"
 msgstr ""
 
 #: patterns/contact-split.php:36
+#: patterns/footer-academy.php:30
+#: patterns/footer-bootcamp.php:30
+#: patterns/footer-school.php:30
+#: patterns/footer-university.php:30
+#: patterns/footer.php:30
 msgid "203 Fake St, Mountain View, California"
 msgstr ""
 
@@ -1095,57 +1108,86 @@ msgstr ""
 #: patterns/footer-bootcamp.php
 #: patterns/footer-school.php
 #: patterns/footer-university.php
+#: patterns/footer.php
 msgctxt "Pattern description"
 msgid "A four-column footer on the dark ground."
 msgstr ""
 
-#: patterns/footer-academy.php:47
+#: patterns/footer-academy.php:50
+#: patterns/footer.php:50
 msgid "All courses"
 msgstr ""
 
-#: patterns/footer-academy.php:50
+#: patterns/footer-academy.php:53
+#: patterns/footer.php:53
 msgid "Subjects"
 msgstr ""
 
-#: patterns/footer-academy.php:53
+#: patterns/footer-academy.php:56
+#: patterns/footer.php:56
 msgid "Term dates"
 msgstr ""
 
-#: patterns/footer-academy.php:56
+#: patterns/footer-academy.php:59
+#: patterns/footer.php:59
 msgid "Prospectus"
 msgstr ""
 
-#: patterns/footer-academy.php:70
+#: patterns/footer-academy.php:73
+#: patterns/footer.php:73
 msgid "About us"
 msgstr ""
 
-#: patterns/footer-academy.php:73
+#: patterns/footer-academy.php:76
+#: patterns/footer.php:76
 msgid "Our tutors"
 msgstr ""
 
-#: patterns/footer-academy.php:79
+#: patterns/footer-academy.php:82
+#: patterns/footer.php:82
 msgid "Journal"
 msgstr ""
 
-#: patterns/footer-academy.php:96
-#: patterns/footer-university.php:99
+#: patterns/footer-academy.php:99
+#: patterns/footer-university.php:102
+#: patterns/footer.php:99
 msgid "Fees and funding"
 msgstr ""
 
-#: patterns/footer-academy.php:99
+#: patterns/footer-academy.php:102
+#: patterns/footer-academy.php:119
+#: patterns/footer-bootcamp.php:119
+#: patterns/footer-school.php:119
+#: patterns/footer-university.php:119
+#: patterns/footer.php:105
+#: patterns/footer.php:119
 msgid "Accessibility"
 msgstr ""
 
-#: patterns/footer-academy.php:102
-#: patterns/footer-bootcamp.php:102
+#: patterns/footer-academy.php:105
+#: patterns/footer-academy.php:119
+#: patterns/footer-bootcamp.php:105
+#: patterns/footer-bootcamp.php:119
+#: patterns/footer-school.php:119
+#: patterns/footer-university.php:119
+#: patterns/footer.php:119
 msgid "Privacy"
 msgstr ""
 
-#: patterns/footer-academy.php:113
-#: patterns/footer-bootcamp.php:113
-#: patterns/footer-school.php:113
-#: patterns/footer-university.php:113
+#: patterns/footer-academy.php:116
+#: patterns/footer-bootcamp.php:116
+#: patterns/footer-school.php:116
+#: patterns/footer-university.php:116
+#: patterns/footer.php:116
 msgid "All rights reserved."
+msgstr ""
+
+#: patterns/footer-academy.php:119
+#: patterns/footer-bootcamp.php:119
+#: patterns/footer-school.php:119
+#: patterns/footer-university.php:119
+#: patterns/footer.php:119
+msgid "Terms"
 msgstr ""
 
 #: patterns/footer-bootcamp.php
@@ -1153,23 +1195,23 @@ msgctxt "Pattern title"
 msgid "Footer: bootcamp"
 msgstr ""
 
-#: patterns/footer-bootcamp.php:50
+#: patterns/footer-bootcamp.php:53
 msgid "Cohort dates"
 msgstr ""
 
-#: patterns/footer-bootcamp.php:70
+#: patterns/footer-bootcamp.php:73
 msgid "How to apply"
 msgstr ""
 
-#: patterns/footer-bootcamp.php:76
+#: patterns/footer-bootcamp.php:79
 msgid "Scholarships"
 msgstr ""
 
-#: patterns/footer-bootcamp.php:79
+#: patterns/footer-bootcamp.php:82
 msgid "FAQ"
 msgstr ""
 
-#: patterns/footer-bootcamp.php:93
+#: patterns/footer-bootcamp.php:96
 msgid "Hiring partners"
 msgstr ""
 
@@ -1178,39 +1220,39 @@ msgctxt "Pattern title"
 msgid "Footer: school"
 msgstr ""
 
-#: patterns/footer-school.php:50
+#: patterns/footer-school.php:53
 msgid "Our teachers"
 msgstr ""
 
-#: patterns/footer-school.php:53
+#: patterns/footer-school.php:56
 msgid "The day"
 msgstr ""
 
-#: patterns/footer-school.php:56
+#: patterns/footer-school.php:59
 msgid "Term calendar"
 msgstr ""
 
-#: patterns/footer-school.php:73
+#: patterns/footer-school.php:76
 msgid "Uniform"
 msgstr ""
 
-#: patterns/footer-school.php:76
+#: patterns/footer-school.php:79
 msgid "Lunches"
 msgstr ""
 
-#: patterns/footer-school.php:79
+#: patterns/footer-school.php:82
 msgid "Newsletter"
 msgstr ""
 
-#: patterns/footer-school.php:93
+#: patterns/footer-school.php:96
 msgid "Book a visit"
 msgstr ""
 
-#: patterns/footer-school.php:96
+#: patterns/footer-school.php:99
 msgid "Find us"
 msgstr ""
 
-#: patterns/footer-school.php:102
+#: patterns/footer-school.php:105
 msgid "Policies"
 msgstr ""
 
@@ -1219,98 +1261,41 @@ msgctxt "Pattern title"
 msgid "Footer: university"
 msgstr ""
 
-#: patterns/footer-university.php:47
+#: patterns/footer-university.php:50
 msgid "Undergraduate"
 msgstr ""
 
-#: patterns/footer-university.php:50
+#: patterns/footer-university.php:53
 msgid "Postgraduate"
 msgstr ""
 
-#: patterns/footer-university.php:53
+#: patterns/footer-university.php:56
 msgid "Research degrees"
 msgstr ""
 
-#: patterns/footer-university.php:56
+#: patterns/footer-university.php:59
 msgid "Short courses"
 msgstr ""
 
-#: patterns/footer-university.php:70
+#: patterns/footer-university.php:73
 msgid "The university"
 msgstr ""
 
-#: patterns/footer-university.php:73
+#: patterns/footer-university.php:76
 msgid "Faculties"
 msgstr ""
 
-#: patterns/footer-university.php:76
+#: patterns/footer-university.php:79
 msgid "Research"
 msgstr ""
 
-#: patterns/footer-university.php:96
+#: patterns/footer-university.php:99
 msgid "Open days"
 msgstr ""
 
 #: patterns/footer.php
 msgctxt "Pattern title"
 msgid "Footer"
-msgstr ""
-
-#: patterns/footer.php
-msgctxt "Pattern description"
-msgid "Dark four-column footer with brand, links, latest posts, contact details and copyright bar."
-msgstr ""
-
-#: patterns/footer.php:24
-msgid "One calm workspace for planning, files and conversations. Take on your biggest projects and goals with Academia."
-msgstr ""
-
-#: patterns/footer.php:41
-msgid "Company"
-msgstr ""
-
-#: patterns/footer.php:44
-msgctxt "Footer menu link"
-msgid "About"
-msgstr ""
-
-#: patterns/footer.php:45
-msgctxt "Footer menu link"
-msgid "Pricing"
-msgstr ""
-
-#: patterns/footer.php:46
-msgctxt "Footer menu link"
-msgid "Careers"
-msgstr ""
-
-#: patterns/footer.php:47
-msgctxt "Footer menu link"
-msgid "Contact"
-msgstr ""
-
-#: patterns/footer.php:55
-msgid "Latest posts"
-msgstr ""
-
-#: patterns/footer.php:67
-msgid "198 West 21th Street, Suite 721"
-msgstr ""
-
-#: patterns/footer.php:67
-msgid "New York, NY 10016"
-msgstr ""
-
-#. translators: 1: current year, 2: site name.
-#: patterns/footer.php:84
-#, php-format
-msgid "© %1$s %2$s. All rights reserved."
-msgstr ""
-
-#. translators: %s: link to Colorlib.
-#: patterns/footer.php:96
-#, php-format
-msgid "Academia theme by %s"
 msgstr ""
 
 #: patterns/header.php
@@ -1709,7 +1694,7 @@ msgstr ""
 
 #: patterns/sidebar.php:55
 msgctxt "Button text"
-msgid "Start free trial"
+msgid "Browse courses"
 msgstr ""
 
 #: patterns/stats.php

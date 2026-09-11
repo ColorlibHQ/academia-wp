@@ -2,104 +2,123 @@
 /**
  * Title: Footer
  * Slug: academia/footer
- * Categories: footer
+ * Categories: academia_utility, academia, footer
+ * Keywords: footer, links, legal
  * Block Types: core/template-part/footer
- * Description: Dark four-column footer with brand, links, latest posts, contact details and copyright bar.
+ * Viewport Width: 1400
+ * Description: A four-column footer on the dark ground.
  *
  * @package Academia
  */
 
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|60"},"elements":{"link":{"color":{"text":"var:preset|color|base"},":hover":{"color":{"text":"var:preset|color|teal-light"}}},"heading":{"color":{"text":"var:preset|color|base"}}}},"backgroundColor":"dark","textColor":"base","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-base-color has-dark-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--40)">
-	<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
-	<div class="wp-block-columns alignwide">
-		<!-- wp:column {"width":"34%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
-		<div class="wp-block-column" style="flex-basis:34%">
-			<!-- wp:site-title {"level":0,"style":{"elements":{"link":{"color":{"text":"var:preset|color|base"}}}}} /-->
-			<?php if ( get_bloginfo( 'description' ) ) : ?>
-			<!-- wp:site-tagline {"className":"academia-footer-note"} /-->
-			<?php else : ?>
-			<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.75)"}}} -->
-			<p class="has-text-color" style="color:rgba(255,255,255,0.75)"><?php esc_html_e( 'One calm workspace for planning, files and conversations. Take on your biggest projects and goals with Academia.', 'academia' ); ?></p>
-			<!-- /wp:paragraph -->
-			<?php endif; ?>
-			<!-- wp:social-links {"iconColor":"base","iconColorValue":"#ffffff","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|30"}}}} -->
-			<ul class="wp-block-social-links has-icon-color is-style-logos-only">
-				<!-- wp:social-link {"url":"https://facebook.com","service":"facebook"} /-->
-				<!-- wp:social-link {"url":"https://x.com","service":"x"} /-->
-				<!-- wp:social-link {"url":"https://linkedin.com","service":"linkedin"} /-->
-				<!-- wp:social-link {"url":"https://youtube.com","service":"youtube"} /-->
-			</ul>
-			<!-- /wp:social-links -->
-		</div>
-		<!-- /wp:column -->
-
-		<!-- wp:column {"width":"18%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
-		<div class="wp-block-column" style="flex-basis:18%">
-			<!-- wp:heading {"fontSize":"medium"} -->
-			<h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Company', 'academia' ); ?></h2>
-			<!-- /wp:heading -->
-			<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"},"style":{"spacing":{"blockGap":"var:preset|spacing|20"},"typography":{"textTransform":"none","letterSpacing":"0","fontWeight":"400"}},"fontFamily":"body","fontSize":"medium"} -->
-				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'About', 'Footer menu link', 'academia' ); ?>","url":"#"} /-->
-				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Pricing', 'Footer menu link', 'academia' ); ?>","url":"#"} /-->
-				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Careers', 'Footer menu link', 'academia' ); ?>","url":"#"} /-->
-				<!-- wp:navigation-link {"label":"<?php echo esc_html_x( 'Contact', 'Footer menu link', 'academia' ); ?>","url":"#"} /-->
-			<!-- /wp:navigation -->
-		</div>
-		<!-- /wp:column -->
-
-		<!-- wp:column {"width":"24%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
-		<div class="wp-block-column" style="flex-basis:24%">
-			<!-- wp:heading {"fontSize":"medium"} -->
-			<h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Latest posts', 'academia' ); ?></h2>
-			<!-- /wp:heading -->
-			<!-- wp:latest-posts {"postsToShow":3,"displayPostDate":true} /-->
-		</div>
-		<!-- /wp:column -->
-
-		<!-- wp:column {"width":"24%","style":{"spacing":{"blockGap":"var:preset|spacing|30"}}} -->
-		<div class="wp-block-column" style="flex-basis:24%">
-			<!-- wp:heading {"fontSize":"medium"} -->
-			<h2 class="wp-block-heading has-medium-font-size"><?php esc_html_e( 'Contact', 'academia' ); ?></h2>
-			<!-- /wp:heading -->
-			<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.75)"}}} -->
-			<p class="has-text-color" style="color:rgba(255,255,255,0.75)"><?php esc_html_e( '198 West 21th Street, Suite 721', 'academia' ); ?><br><?php esc_html_e( 'New York, NY 10016', 'academia' ); ?></p>
-			<!-- /wp:paragraph -->
-			<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.75)"}}} -->
-			<p class="has-text-color" style="color:rgba(255,255,255,0.75)"><a href="tel:+1235235598">+1 235 2355 98</a><br><a href="mailto:info@example.com">info@example.com</a></p>
-			<!-- /wp:paragraph -->
-		</div>
-		<!-- /wp:column -->
-	</div>
-	<!-- /wp:columns -->
-
-	<!-- wp:group {"align":"wide","style":{"border":{"top":{"color":"rgba(255,255,255,0.15)","width":"1px","style":"solid"}},"spacing":{"padding":{"top":"var:preset|spacing|40"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
-	<div class="wp-block-group alignwide" style="border-top-color:rgba(255,255,255,0.15);border-top-style:solid;border-top-width:1px;padding-top:var(--wp--preset--spacing--40)">
-		<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.75)"}},"fontSize":"small"} -->
-		<p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.75)">
-		<?php
-		printf(
-			/* translators: 1: current year, 2: site name. */
-			esc_html__( '© %1$s %2$s. All rights reserved.', 'academia' ),
-			esc_html( date_i18n( 'Y' ) ),
-			esc_html( get_bloginfo( 'name' ) )
-		);
-		?>
-		</p>
-		<!-- /wp:paragraph -->
-		<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.75)"}},"fontSize":"small"} -->
-		<p class="has-text-color has-small-font-size" style="color:rgba(255,255,255,0.75)">
-		<?php
-		printf(
-			/* translators: %s: link to Colorlib. */
-			esc_html__( 'Academia theme by %s', 'academia' ),
-			'<a href="' . esc_url( 'https://colorlib.com/' ) . '" rel="nofollow noopener">Colorlib</a>'
-		);
-		?>
-		</p>
-		<!-- /wp:paragraph -->
-	</div>
-	<!-- /wp:group -->
+<!-- wp:group {"align":"full","backgroundColor":"dark","textColor":"base","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|60"},"elements":{"link":{"color":{"text":"var:preset|color|base"},":hover":{"color":{"text":"var:preset|color|teal-light"}}},"heading":{"color":{"text":"var:preset|color|base"}}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull has-dark-background-color has-background has-base-color has-text-color has-link-color" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--40);">
+<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|60","left":"var:preset|spacing|60"}}}} -->
+<div class="wp-block-columns alignwide">
+<!-- wp:column {"width":"32%","className":"academia-footer-brand","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-column academia-footer-brand" style="flex-basis:32%;">
+<!-- wp:site-title {"level":0,"fontSize":"large"} /-->
+<?php if ( get_bloginfo( 'description' ) ) : ?>
+<!-- wp:site-tagline {"className":"academia-footer-note"} /-->
+<?php else : ?>
+<!-- wp:paragraph {"className":"academia-footer-note","fontSize":"small"} -->
+<p class="academia-footer-note has-small-font-size">Short, taught courses in design, code and data — small cohorts, practising tutors.</p>
+<!-- /wp:paragraph -->
+<?php endif; ?>
+<!-- wp:html -->
+<ul class="academia-footer-contact"><li><?php echo academia_icon( 'mail' ); ?><span><?php esc_html_e( 'hello@example.com', 'academia' ); ?></span></li><li><?php echo academia_icon( 'phone' ); ?><span><?php esc_html_e( '+1 392 3929 210', 'academia' ); ?></span></li><li><?php echo academia_icon( 'map-pin' ); ?><span><?php esc_html_e( '203 Fake St, Mountain View, California', 'academia' ); ?></span></li></ul>
+<!-- /wp:html -->
+<!-- wp:social-links {"iconColor":"base","iconColorValue":"#ffffff","className":"is-style-logos-only","size":"has-small-icon-size","layout":{"type":"flex","justifyContent":"left"}} -->
+<ul class="wp-block-social-links has-small-icon-size has-icon-color is-style-logos-only">
+<!-- wp:social-link {"url":"#","service":"facebook"} /-->
+<!-- wp:social-link {"url":"#","service":"x"} /-->
+<!-- wp:social-link {"url":"#","service":"instagram"} /-->
+<!-- wp:social-link {"url":"#","service":"linkedin"} /-->
+</ul>
+<!-- /wp:social-links -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"className":"academia-footer-col","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-column academia-footer-col">
+<!-- wp:heading {"className":"academia-footer-heading","textColor":"base","fontSize":"small"} -->
+<h2 class="wp-block-heading academia-footer-heading has-base-color has-text-color has-small-font-size">Courses</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"className":"academia-footer-links"} -->
+<ul class="wp-block-list academia-footer-links">
+<!-- wp:list-item -->
+<li><a href="#"><?php esc_html_e( 'All courses', 'academia' ); ?></a></li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><a href="#"><?php esc_html_e( 'Subjects', 'academia' ); ?></a></li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><a href="#"><?php esc_html_e( 'Term dates', 'academia' ); ?></a></li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><a href="#"><?php esc_html_e( 'Prospectus', 'academia' ); ?></a></li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"className":"academia-footer-col","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-column academia-footer-col">
+<!-- wp:heading {"className":"academia-footer-heading","textColor":"base","fontSize":"small"} -->
+<h2 class="wp-block-heading academia-footer-heading has-base-color has-text-color has-small-font-size">The school</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"className":"academia-footer-links"} -->
+<ul class="wp-block-list academia-footer-links">
+<!-- wp:list-item -->
+<li><a href="#"><?php esc_html_e( 'About us', 'academia' ); ?></a></li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><a href="#"><?php esc_html_e( 'Our tutors', 'academia' ); ?></a></li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><a href="#"><?php esc_html_e( 'Outcomes', 'academia' ); ?></a></li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><a href="#"><?php esc_html_e( 'Journal', 'academia' ); ?></a></li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"className":"academia-footer-col","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+<div class="wp-block-column academia-footer-col">
+<!-- wp:heading {"className":"academia-footer-heading","textColor":"base","fontSize":"small"} -->
+<h2 class="wp-block-heading academia-footer-heading has-base-color has-text-color has-small-font-size">Help</h2>
+<!-- /wp:heading -->
+<!-- wp:list {"className":"academia-footer-links"} -->
+<ul class="wp-block-list academia-footer-links">
+<!-- wp:list-item -->
+<li><a href="#"><?php esc_html_e( 'Contact', 'academia' ); ?></a></li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><a href="#"><?php esc_html_e( 'Fees and funding', 'academia' ); ?></a></li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><a href="#"><?php esc_html_e( 'Admissions', 'academia' ); ?></a></li>
+<!-- /wp:list-item -->
+<!-- wp:list-item -->
+<li><a href="#"><?php esc_html_e( 'Accessibility', 'academia' ); ?></a></li>
+<!-- /wp:list-item -->
+</ul>
+<!-- /wp:list -->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+<!-- wp:group {"align":"wide","style":{"border":{"top":{"color":"rgba(255,255,255,0.14)","width":"1px","style":"solid"}},"spacing":{"padding":{"top":"var:preset|spacing|40"},"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group alignwide" style="border-top-color:rgba(255,255,255,0.14);border-top-style:solid;border-top-width:1px;padding-top:var(--wp--preset--spacing--40);">
+<!-- wp:paragraph {"className":"academia-footer-note","fontSize":"small"} -->
+<p class="academia-footer-note has-small-font-size">&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>. <?php esc_html_e( 'All rights reserved.', 'academia' ); ?></p>
+<!-- /wp:paragraph -->
+<!-- wp:html -->
+<ul class="academia-footer-legal"><li><a href="#"><?php esc_html_e( 'Privacy', 'academia' ); ?></a></li><li><a href="#"><?php esc_html_e( 'Terms', 'academia' ); ?></a></li><li><a href="#"><?php esc_html_e( 'Accessibility', 'academia' ); ?></a></li></ul>
+<!-- /wp:html -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->

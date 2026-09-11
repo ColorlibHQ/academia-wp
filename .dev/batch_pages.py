@@ -94,14 +94,38 @@ DEMOS = {
 # --------------------------------------------------------------------------
 # Footers
 # --------------------------------------------------------------------------
-def footer(nav_title, links, note):
+def footer(nav_title, links, note, *, contact=None):
     """A vertical's footer.
 
-    The brand column shows the site's own tagline when it has one and the
-    written line when it does not — without both branches a fresh install
-    shows an empty column, and a site that has set a tagline shows copy that
-    contradicts it.
+    Three things the first cut got wrong, all visible at 1:1:
+
+    * The link lists were bare `wp:list` blocks, so they rendered with the
+      browser's disc bullets and a 40px indent — a bulleted, indented list on a
+      dark ground, which is what made the whole thing look amateur.
+    * The column headings were 14px at weight 700 with no tracking, so they
+      read as slightly-bolder links rather than as headings.
+    * The brand column held only a title, a tagline and four icons, which is
+      thin at 420px wide and left the footer with nothing to anchor it.
+
+    So: the lists get a real class and are styled in style.css, the headings get
+    an eyebrow treatment, and the brand column carries the contact facts that
+    people actually come to a footer looking for.
+
+    The tagline keeps both branches — the site's own when it has one, the
+    written line when it does not. Without both, a fresh install shows an empty
+    column and a site that has set a tagline shows copy contradicting it.
     """
+    contact = contact or [
+        ("mail", "hello@example.com"),
+        ("phone", "+1 392 3929 210"),
+        ("map-pin", "203 Fake St, Mountain View, California"),
+    ]
+
+    facts = "".join(
+        '<li>{{ICON:%s}}<span>%s</span></li>' % (icon, A.t(text))
+        for icon, text in contact
+    )
+
     brand = "\n".join([
         '<!-- wp:site-title {"level":0,"fontSize":"large"} /-->',
         "<?php if ( get_bloginfo( 'description' ) ) : ?>",
@@ -109,27 +133,46 @@ def footer(nav_title, links, note):
         "<?php else : ?>",
         A.para(note, class_name="academia-footer-note", size="small"),
         "<?php endif; ?>",
+        A.resolve_icons(A.html_block('<ul class="academia-footer-contact">%s</ul>' % facts)),
         A.social([("facebook", "#"), ("x", "#"), ("instagram", "#"), ("linkedin", "#")],
                  justify="left", size="has-small-icon-size", color="base", value="#ffffff"),
     ])
 
-    columns = [A.column(brand, width="34%", gap="30")]
+    # An explicit flex column, not the default flow layout: flow spacing comes
+    # from child margins, and the footer resets those to zero, so a blockGap on
+    # a flow column has no effect. Measured 1px gaps before this changed.
+    columns = [A.column(brand, width="32%", gap="30", layout="flex",
+                        orientation="vertical", style_variation="academia-footer-brand")]
 
     for title, items in links:
-        col = A.heading(title, level=2, size="small", color="base") + "\n" + A.lst(
-            [f'<a href="#">{A.t(item)}</a>' for item in items], style=None
-        )
-        columns.append(A.column(col, gap="20"))
+        # A real class on the list, because a bare wp:list inherits the
+        # browser's bullets and indent.
+        body = A.lst([f'<a href="#">{A.t(item)}</a>' for item in items],
+                     style=None, class_name="academia-footer-links")
+        col = A.heading(title, level=2, size="small", color="base",
+                        class_name="academia-footer-heading") + "\n" + body
+        columns.append(A.column(col, gap="30", layout="flex", orientation="vertical",
+                                style_variation="academia-footer-col"))
 
     row = A.columns(columns, align="wide", gap="60")
+
+    # Copyright on one side, the legal links on the other, so the bottom bar is
+    # a bar rather than a stray line of small print.
+    legal_links = A.resolve_icons(A.html_block(
+        '<ul class="academia-footer-legal">'
+        + "".join('<li><a href="#">%s</a></li>' % A.t(t)
+                  for t in ("Privacy", "Terms", "Accessibility"))
+        + '</ul>'
+    ))
 
     legal = A.group(
         A.para("&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> "
                + "<?php echo esc_html( get_bloginfo( 'name' ) ); ?>. "
                + A.t("All rights reserved."),
-               class_name="academia-footer-note", size="small"),
+               class_name="academia-footer-note", size="small")
+        + "\n" + legal_links,
         layout="flex", justify="space-between", gap="30", wrap="wrap",
-        align="wide", border_top=("rgba(255,255,255,0.16)", "1px", "solid"),
+        align="wide", border_top=("rgba(255,255,255,0.14)", "1px", "solid"),
         pad={"top": "40"},
     )
 
@@ -145,6 +188,16 @@ def footer(nav_title, links, note):
 
 
 FOOTERS = {
+    # The default, referenced by parts/footer.html.
+    "footer": ("Footer", footer(
+        "Academy",
+        [
+            ("Courses", ["All courses", "Subjects", "Term dates", "Prospectus"]),
+            ("The school", ["About us", "Our tutors", "Outcomes", "Journal"]),
+            ("Help", ["Contact", "Fees and funding", "Admissions", "Accessibility"]),
+        ],
+        "Short, taught courses in design, code and data — small cohorts, practising tutors.",
+    )),
     "footer-academy": ("Footer: academy", footer(
         "Academy",
         [

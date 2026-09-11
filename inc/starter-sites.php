@@ -804,15 +804,19 @@ function academia_apply_starter_footer( $site ) {
 /**
  * Give the header the starter's own call-to-action label.
  *
- * The header pattern ships with a SaaS label, which reads oddly on a church or
- * a gym. This saves a customised copy of the header template part with the
- * starter's wording — the same thing the user would get by editing the header
- * in the Site Editor.
+ * The header pattern ships with "Enrol now", which reads oddly on a bootcamp
+ * or an arts studio. This saves a customised copy of the header template part
+ * with the starter's wording — the same thing the user would get by editing the
+ * header in the Site Editor.
+ *
+ * $default MUST match the label in patterns/header.php. If it drifts, the
+ * "this starter uses the theme's own wording" branch never fires and every
+ * starter writes a header override it does not need.
  *
  * @param array $site Starter site definition.
  */
 function academia_apply_starter_header( $site ) {
-	$default  = _x( 'Get Premium', 'Header call-to-action button', 'academia' );
+	$default  = _x( 'Enrol now', 'Header call-to-action button', 'academia' );
 	$existing = academia_get_customised_header();
 
 	// A starter that uses the theme's own wording needs no customised part. Remove
