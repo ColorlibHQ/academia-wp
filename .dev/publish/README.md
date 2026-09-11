@@ -29,6 +29,16 @@ saving. **Any script that writes WPBakery content must do the same.**
 
 ## Other things worth knowing
 
+- **URLs in a `vc_btn` `link=` attribute must be percent-encoded.** That
+  attribute is WPBakery's own `url:…|title:…|target:…` encoding: it splits on
+  `|` and then on the **first `:`**, so a raw `https://…` is cut off at
+  `https:` and the button renders `href="http://https"` — every button on the
+  page dead, while the shortcode text looks perfectly correct. Use
+  `rawurlencode()`. Plain `url="…"` attributes, as on `vcex_teaser`, take the
+  URL as-is — only `link=` needs encoding.
+- **Check the rendered `<a href>`, not the shortcode.** The script asserts
+  `dead: 0` by running `do_shortcode()` and scanning the anchors, because
+  counting URLs in the content proves nothing about what the browser gets.
 - **`vcex_toggle` takes `heading`, not `title`.** With `title` every toggle
   silently renders the shortcode's own placeholder, "Lorem ipsum dolor sit
   amet?". Seven of them shipped that way.
