@@ -289,6 +289,17 @@ function academia_apply_starter_site( $slug ) {
 	$created['home'] = $home_id;
 
 	foreach ( $site['pages'] as $key => $page ) {
+		// A page whose slug matches a registered archive is unreachable: the
+		// archive wins the URL, so the page is orphaned and editing it changes
+		// nothing on the front end. Link the menu at the archive instead.
+		$archive = academia_starter_archive_url( $page['title'] );
+
+		if ( $archive ) {
+			$created[ $key . '_archive' ] = $archive;
+
+			continue;
+		}
+
 		$markup = academia_get_starter_page_markup( $page );
 		if ( '' === $markup ) {
 			continue;
@@ -586,10 +597,61 @@ function academia_apply_starter_styles( $site ) {
  * @param array $site    Starter site definition.
  * @param array $created Created page IDs keyed by page key.
  */
+/**
+ * The archive URL a starter page would collide with, if any.
+ *
+ * The course archive lives at /courses/ when Academia Library is active, so a
+ * starter that also wants a "Courses" page would create one WordPress can never
+ * serve. This returns the archive URL in that case so the caller can link to it
+ * rather than create a dead page.
+ *
+ * @param string $title Starter page title.
+ * @return string Archive URL, or an empty string when there is no collision.
+ */
+function academia_starter_archive_url( $title ) {
+	$slug = sanitize_title( $title );
+
+	if ( '' === $slug ) {
+		return '';
+	}
+
+	foreach ( get_post_types( array( 'has_archive' => true ), 'objects' ) as $type ) {
+		$archive_slug = is_string( $type->has_archive ) ? $type->has_archive : $type->name;
+
+		if ( isset( $type->rewrite['slug'] ) && is_string( $type->rewrite['slug'] ) ) {
+			$archive_slug = $type->rewrite['slug'];
+		}
+
+		if ( $slug !== $archive_slug ) {
+			continue;
+		}
+
+		$url = get_post_type_archive_link( $type->name );
+
+		if ( $url ) {
+			return $url;
+		}
+	}
+
+	return '';
+}
+
 function academia_build_starter_menu( $site, $created ) {
 	$items = '';
 
 	foreach ( $site['pages'] as $key => $page ) {
+		// An entry resolved to a post-type archive has a URL but no page ID, so
+		// it is a custom link rather than a post-type link.
+		if ( ! empty( $created[ $key . '_archive' ] ) ) {
+			$items .= sprintf(
+				'<!-- wp:navigation-link {"label":"%1$s","url":"%2$s","kind":"custom","isTopLevelLink":true} /-->' . "\n",
+				esc_attr( $page['title'] ),
+				esc_url( $created[ $key . '_archive' ] )
+			);
+
+			continue;
+		}
+
 		if ( empty( $created[ $key ] ) ) {
 			continue;
 		}
