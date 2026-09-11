@@ -195,3 +195,21 @@ sound; its application was not.
   declared an `Update URI` header since 1.0.0 with nothing acting on it, so it
   advertised an update endpoint and could never have offered an update.
 
+## [1.1.0] — 2026-09-11
+
+### Added
+
+- **Every starter site now has its own hero.** All six opened with the online
+  academy's copy, so a university read as an academy and a primary school
+  advertised "courses in design, code and data" — the same "every niche owns its
+  whole page" failure that bit Unapp 2.3. There are now six heroes with their
+  own headline, lead, calls to action, proof facts and photograph, built from one
+  parameterised `hero()` so the measurements stay shared.
+
+### Changed
+
+- The six starters now read as six products: each pairs its own hero with its
+  own palette, typeface, navigation and header call to action — teal/Manrope
+  "Browse courses" for the academy through to slate/Space Grotesk "Join a
+  cohort" for the bootcamp.
+

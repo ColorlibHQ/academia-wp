@@ -12,7 +12,7 @@
  */
 
 ?>
-<!-- wp:pattern {"slug":"academia/hero-academy"} /-->
+<!-- wp:pattern {"slug":"academia/hero-university"} /-->
 <!-- wp:pattern {"slug":"academia/accreditation"} /-->
 <!-- wp:pattern {"slug":"academia/subjects"} /-->
 <!-- wp:pattern {"slug":"academia/courses-featured"} /-->

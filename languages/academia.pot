@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Academia 1.0.4\n"
+"Project-Id-Version: Academia 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/academia\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-09-11T13:36:50+00:00\n"
+"POT-Creation-Date: 2026-09-11T13:53:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: academia\n"
@@ -1245,6 +1245,7 @@ msgid "Newsletter"
 msgstr ""
 
 #: patterns/footer-school.php:96
+#: patterns/hero-school.php:32
 msgid "Book a visit"
 msgstr ""
 
@@ -1344,6 +1345,192 @@ msgstr ""
 
 #: patterns/hero-academy.php:47
 msgid "A student holding books, smiling"
+msgstr ""
+
+#: patterns/hero-bootcamp.php
+msgctxt "Pattern title"
+msgid "Hero: bootcamp"
+msgstr ""
+
+#: patterns/hero-bootcamp.php
+msgctxt "Pattern description"
+msgid "A split opening written for an intensive technical course."
+msgstr ""
+
+#: patterns/hero-bootcamp.php:21
+msgid "Next cohort starts 3 March"
+msgstr ""
+
+#: patterns/hero-bootcamp.php:32
+msgid "See the syllabus"
+msgstr ""
+
+#: patterns/hero-bootcamp.php:35
+msgid "Check you are eligible"
+msgstr ""
+
+#: patterns/hero-bootcamp.php:40
+msgid "84% hired in six months"
+msgstr ""
+
+#: patterns/hero-bootcamp.php:40
+msgid "Pay after you are hired"
+msgstr ""
+
+#: patterns/hero-bootcamp.php:40
+msgid "16 per cohort"
+msgstr ""
+
+#: patterns/hero-bootcamp.php:47
+msgid "A developer at a laptop"
+msgstr ""
+
+#: patterns/hero-language.php
+msgctxt "Pattern title"
+msgid "Hero: language school"
+msgstr ""
+
+#: patterns/hero-language.php
+msgctxt "Pattern description"
+msgid "A split opening written for a language school."
+msgstr ""
+
+#: patterns/hero-language.php:21
+msgid "Free placement test"
+msgstr ""
+
+#: patterns/hero-language.php:32
+msgid "Take the placement test"
+msgstr ""
+
+#: patterns/hero-language.php:35
+msgid "See the timetable"
+msgstr ""
+
+#: patterns/hero-language.php:40
+msgid "8 languages"
+msgstr ""
+
+#: patterns/hero-language.php:40
+msgid "9 to a class"
+msgstr ""
+
+#: patterns/hero-language.php:40
+msgid "Exam centre for DELE and DELF"
+msgstr ""
+
+#: patterns/hero-language.php:47
+msgid "A tutor teaching a small class"
+msgstr ""
+
+#: patterns/hero-school.php
+msgctxt "Pattern title"
+msgid "Hero: school"
+msgstr ""
+
+#: patterns/hero-school.php
+msgctxt "Pattern description"
+msgid "A split opening written for a primary school."
+msgstr ""
+
+#: patterns/hero-school.php:21
+msgid "Now taking names for September"
+msgstr ""
+
+#: patterns/hero-school.php:35
+msgid "See our classes"
+msgstr ""
+
+#: patterns/hero-school.php:40
+msgid "210 children"
+msgstr ""
+
+#: patterns/hero-school.php:40
+msgid "Ofsted Outstanding"
+msgstr ""
+
+#: patterns/hero-school.php:40
+msgid "7.45am to 6pm care"
+msgstr ""
+
+#: patterns/hero-school.php:47
+msgid "A child working in a classroom"
+msgstr ""
+
+#: patterns/hero-studio.php
+msgctxt "Pattern title"
+msgid "Hero: arts studio"
+msgstr ""
+
+#: patterns/hero-studio.php
+msgctxt "Pattern description"
+msgid "A split opening written for a creative studio."
+msgstr ""
+
+#: patterns/hero-studio.php:21
+msgid "Studio open Tuesday to Sunday"
+msgstr ""
+
+#: patterns/hero-studio.php:32
+msgid "Book a lesson"
+msgstr ""
+
+#: patterns/hero-studio.php:35
+msgid "See the workshops"
+msgstr ""
+
+#: patterns/hero-studio.php:40
+msgid "6 to a bench"
+msgstr ""
+
+#: patterns/hero-studio.php:40
+msgid "Evenings and weekends"
+msgstr ""
+
+#: patterns/hero-studio.php:40
+msgid "All materials included"
+msgstr ""
+
+#: patterns/hero-studio.php:47
+msgid "A working studio with students at the bench"
+msgstr ""
+
+#: patterns/hero-university.php
+msgctxt "Pattern title"
+msgid "Hero: university"
+msgstr ""
+
+#: patterns/hero-university.php
+msgctxt "Pattern description"
+msgid "A split opening written for a degree-awarding institution."
+msgstr ""
+
+#: patterns/hero-university.php:21
+msgid "Applications close 15 January"
+msgstr ""
+
+#: patterns/hero-university.php:32
+msgid "Explore programmes"
+msgstr ""
+
+#: patterns/hero-university.php:35
+msgid "Book an open day"
+msgstr ""
+
+#: patterns/hero-university.php:40
+msgid "11,400 students"
+msgstr ""
+
+#: patterns/hero-university.php:40
+msgid "78 countries"
+msgstr ""
+
+#: patterns/hero-university.php:40
+msgid "Chartered 1897"
+msgstr ""
+
+#: patterns/hero-university.php:47
+msgid "The main university building"
 msgstr ""
 
 #: patterns/hidden-404.php

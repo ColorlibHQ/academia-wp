@@ -4,7 +4,7 @@ Contributors: colorlib
 Requires at least: 6.6
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.0.4
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: education, blog, portfolio, full-site-editing, block-patterns, block-styles, template-editing, wide-blocks, accessibility-ready, translation-ready, custom-colors, custom-menu, custom-logo, featured-images, threaded-comments, one-column, two-columns, right-sidebar, left-sidebar, rtl-language-support, sticky-post, theme-options
@@ -58,7 +58,7 @@ enhancement only removes the page load.
 
 = Blocks and editing =
 
-* 53 patterns: heroes, course grids, subject tiles, curriculum outlines,
+* 58 patterns: six starter heroes, course grids, subject tiles, curriculum outlines,
   instructors, testimonials, statistics, fee tables, admissions steps, FAQs,
   calls to action and contact sections.
 * Nine whole-page starters for Home, Courses, Instructors, Fees, About,
@@ -158,6 +158,9 @@ Photographs (assets/images/*.avif)
   Source: https://unsplash.com/
 
 == Changelog ==
+
+= 1.1.0 =
+* Every starter site now has its own hero copy, photograph and calls to action, instead of all six sharing the online academy's.
 
 = 1.0.4 =
 * Fixed a fatal error that stopped Academia Library being activated on a site already running the theme, and gave the plugin the update handler its header promised.

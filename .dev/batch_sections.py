@@ -27,43 +27,127 @@ def w(slug, **kwargs):
 # --------------------------------------------------------------------------
 # Heroes
 # --------------------------------------------------------------------------
-def hero_academy():
-    """The default hero.
+def hero(*, chip, title, lead, primary, secondary, facts, image, alt):
+    """The hero shape every vertical uses.
 
     The HTML template put a 900px-tall teal cover behind a photo cropped to a
-    face, with the copy stranded in the bottom-left of an empty field. This is
-    a split instead: the claim and the actions sit in a readable column, the
-    photograph earns its place beside them, and a small proof card overlaps the
-    image so the two halves read as one object.
+    face, with the copy stranded in the bottom-left of an empty field. This is a
+    split instead: the claim and the actions sit in a readable column and the
+    photograph earns its place beside them.
+
+    Copy is a parameter because every niche owns its whole page. Six starters
+    sharing the academy's hero — which is what shipped in 1.0.0 — makes a
+    university read as an online academy.
     """
     left = "\n".join([
-        A.chip(A.t("Enrolling for the spring term")),
-        A.heading("Learn the skills your next step asks for", level=1),
-        A.para(
-            "Short, taught courses in design, code and data — built with people "
-            "working in the field, and small enough that your tutor knows your name.",
-            size="large", color="muted",
-        ),
+        A.chip(A.t(chip)),
+        A.heading(title, level=1),
+        A.para(lead, size="large", color="muted"),
         A.buttons([
-            {"text": A.t("Browse courses"), "url": "#courses"},
-            {"text": A.t("Talk to an advisor"), "url": "#contact", "style": "academia-ghost"},
+            {"text": A.t(primary[0]), "url": primary[1]},
+            {"text": A.t(secondary[0]), "url": secondary[1], "style": "academia-ghost"},
         ], gap="30"),
-        A.resolve_icons(A.meta_row([
-            ("users", A.t("4,800 students")),
-            ("award", A.t("Accredited since 2009")),
-            ("star", A.t("4.9 average rating")),
-        ])),
+        A.resolve_icons(A.meta_row([(icon, A.t(text)) for icon, text in facts])),
     ])
 
-    right = A.image(A.uri(f"{IMG}/hero-academy.avif"),
-                    A.tattr("A student holding books, smiling"),
+    right = A.image(A.uri(f"{IMG}/{image}"), A.tattr(alt),
                     radius="20px", aspect="4/5", scale="cover", shadow="lifted",
                     class_name="academia-hero-portrait")
 
     return A.section_std(
         A.split(left, right, left_width="54%", right_width="46%"),
-        pad=("70", "70"),
-        gap="0",
+        pad=("70", "70"), gap="0",
+    )
+
+
+def hero_academy():
+    return hero(
+        chip="Enrolling for the spring term",
+        title="Learn the skills your next step asks for",
+        lead="Short, taught courses in design, code and data — built with people "
+             "working in the field, and small enough that your tutor knows your name.",
+        primary=("Browse courses", "#courses"),
+        secondary=("Talk to an advisor", "#contact"),
+        facts=[("users", "4,800 students"), ("award", "Accredited since 2009"),
+               ("star", "4.9 average rating")],
+        image="hero-academy.avif",
+        alt="A student holding books, smiling",
+    )
+
+
+def hero_university():
+    return hero(
+        chip="Applications close 15 January",
+        title="A university small enough to know you by name",
+        lead="Nine faculties, 140 degree programmes and a staff-to-student ratio of "
+             "one to eleven. Research-led teaching from the people doing the research.",
+        primary=("Explore programmes", "#courses"),
+        secondary=("Book an open day", "#contact"),
+        facts=[("users", "11,400 students"), ("globe", "78 countries"),
+               ("award", "Chartered 1897")],
+        image="hero-wide.avif",
+        alt="The main university building",
+    )
+
+
+def hero_school():
+    return hero(
+        chip="Now taking names for September",
+        title="Where children learn to love the work",
+        lead="A village primary for ages four to eleven. Two classes a year group, "
+             "a forest school on Fridays, and a door that is always open to parents.",
+        primary=("Book a visit", "#contact"),
+        secondary=("See our classes", "#courses"),
+        facts=[("users", "210 children"), ("heart", "Ofsted Outstanding"),
+               ("clock", "7.45am to 6pm care")],
+        image="course-5.avif",
+        alt="A child working in a classroom",
+    )
+
+
+def hero_bootcamp():
+    return hero(
+        chip="Next cohort starts 3 March",
+        title="Sixteen weeks. Then a job, or your money back",
+        lead="Full-time, in person, sixteen people to a cohort. You ship four real "
+             "projects and leave with a portfolio that survives an interview.",
+        primary=("See the syllabus", "#courses"),
+        secondary=("Check you are eligible", "#contact"),
+        facts=[("trending-up", "84% hired in six months"),
+               ("credit-card", "Pay after you are hired"),
+               ("users", "16 per cohort")],
+        image="course-4.avif",
+        alt="A developer at a laptop",
+    )
+
+
+def hero_language():
+    return hero(
+        chip="Free placement test",
+        title="Speak it by the end of term, not the end of the book",
+        lead="A1 to C2 in eight languages, taught by native speakers in classes of "
+             "nine. Two evenings a week, or an intensive fortnight.",
+        primary=("Take the placement test", "#courses"),
+        secondary=("See the timetable", "#contact"),
+        facts=[("message-circle", "8 languages"), ("users", "9 to a class"),
+               ("award", "Exam centre for DELE and DELF")],
+        image="course-2.avif",
+        alt="A tutor teaching a small class",
+    )
+
+
+def hero_studio():
+    return hero(
+        chip="Studio open Tuesday to Sunday",
+        title="Make something with your hands this term",
+        lead="Ceramics, printmaking, painting and piano, taught in a working studio "
+             "by people who make their living from it. Six to a bench.",
+        primary=("Book a lesson", "#contact"),
+        secondary=("See the workshops", "#courses"),
+        facts=[("users", "6 to a bench"), ("clock", "Evenings and weekends"),
+               ("heart", "All materials included")],
+        image="campus.avif",
+        alt="A working studio with students at the bench",
     )
 
 
@@ -477,6 +561,31 @@ SECTIONS = [
      "hero, education, course, enrol",
      "A split opening: the claim and two actions beside a portrait, with a row of proof facts.",
      hero_academy),
+
+    ("hero-university", "Hero: university", "academia_hero, academia, banner",
+     "hero, university, opening",
+     "A split opening written for a degree-awarding institution.",
+     hero_university),
+
+    ("hero-school", "Hero: school", "academia_hero, academia, banner",
+     "hero, school, opening",
+     "A split opening written for a primary school.",
+     hero_school),
+
+    ("hero-bootcamp", "Hero: bootcamp", "academia_hero, academia, banner",
+     "hero, bootcamp, opening",
+     "A split opening written for an intensive technical course.",
+     hero_bootcamp),
+
+    ("hero-language", "Hero: language school", "academia_hero, academia, banner",
+     "hero, language, opening",
+     "A split opening written for a language school.",
+     hero_language),
+
+    ("hero-studio", "Hero: arts studio", "academia_hero, academia, banner",
+     "hero, studio, opening",
+     "A split opening written for a creative studio.",
+     hero_studio),
 
     ("benefits", "Benefits", "academia_features, academia, features",
      "benefits, features, why, teaching",

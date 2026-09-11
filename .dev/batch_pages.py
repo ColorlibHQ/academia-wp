@@ -69,23 +69,23 @@ DEMOS = {
         "subjects", "stats", "testimonials", "pricing", "faq", "cta-enrol",
     ]),
     "demo-university": ("Demo: university", [
-        "hero-academy", "accreditation", "subjects", "courses-featured",
+        "hero-university", "accreditation", "subjects", "courses-featured",
         "stats", "instructors", "outcomes", "admissions-steps", "cta-enrol",
     ]),
     "demo-school": ("Demo: school", [
-        "hero-academy", "benefits", "subjects", "instructors",
+        "hero-school", "benefits", "subjects", "instructors",
         "testimonials", "admissions-steps", "faq", "cta-enrol",
     ]),
     "demo-bootcamp": ("Demo: bootcamp", [
-        "hero-academy", "outcomes", "course-curriculum", "instructors",
+        "hero-bootcamp", "outcomes", "course-curriculum", "instructors",
         "stats", "testimonials", "pricing", "faq", "cta-enrol",
     ]),
     "demo-language": ("Demo: language school", [
-        "hero-academy", "benefits", "courses-featured", "subjects",
+        "hero-language", "benefits", "courses-featured", "subjects",
         "instructors", "testimonials", "pricing", "cta-enrol",
     ]),
     "demo-studio": ("Demo: arts studio", [
-        "hero-academy", "about-split", "courses-featured", "instructors",
+        "hero-studio", "about-split", "courses-featured", "instructors",
         "testimonials", "pricing", "contact-split", "cta-enrol",
     ]),
 }

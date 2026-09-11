@@ -40,6 +40,11 @@ GRADIENT = None                 # set by the pattern itself (cta-enrol)
 ROLES = {
     # explanation and content prefer the page ground
     "hero-academy":      ("hero", PAGE, PAGE),
+    "hero-university":   ("hero", PAGE, PAGE),
+    "hero-school":       ("hero", PAGE, PAGE),
+    "hero-bootcamp":     ("hero", PAGE, PAGE),
+    "hero-language":     ("hero", PAGE, PAGE),
+    "hero-studio":       ("hero", PAGE, PAGE),
     "benefits":          ("explain", PAGE, SOFT),
     "subjects":          ("explain", PAGE, SOFT),
     "about-split":       ("explain", PAGE, SOFT),
