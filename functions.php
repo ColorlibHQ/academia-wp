@@ -48,7 +48,7 @@ add_action( 'after_setup_theme', 'academia_setup' );
  * Front-end styles.
  */
 function academia_enqueue_styles() {
-	wp_enqueue_style( 'academia-style', get_stylesheet_uri(), array(), ACADEMIA_VERSION );
+	wp_enqueue_style( 'academia-wp-academia-style', get_stylesheet_uri(), array(), ACADEMIA_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'academia_enqueue_styles' );
 
@@ -65,9 +65,9 @@ function academia_woocommerce_styles() {
 	}
 
 	wp_enqueue_style(
-		'academia-woocommerce',
+		'academia-wp-academia-woocommerce',
 		get_theme_file_uri( 'assets/css/woocommerce.css' ),
-		array( 'academia-style' ),
+		array( 'academia-wp-academia-style' ),
 		ACADEMIA_VERSION
 	);
 }
@@ -279,7 +279,7 @@ function academia_maybe_enqueue_counter( $block_content, $block ) {
 
 	if ( ! wp_script_is( 'academia-counter', 'enqueued' ) ) {
 		wp_enqueue_script(
-			'academia-counter',
+			'academia-wp-academia-counter',
 			get_theme_file_uri( 'assets/js/counter.js' ),
 			array(),
 			ACADEMIA_VERSION,

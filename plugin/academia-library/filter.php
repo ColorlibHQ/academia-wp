@@ -93,7 +93,7 @@ function academia_library_course_filter( $args = array() ) {
 	$columns = max( 2, min( 4, (int) $query['columns'] ) );
 
 	wp_enqueue_script(
-		'academia-course-filter',
+		'academia-wp-academia-course-filter',
 		academia_library_url() . 'assets/filter.js',
 		array(),
 		ACADEMIA_LIBRARY_VERSION,
@@ -101,7 +101,7 @@ function academia_library_course_filter( $args = array() ) {
 	);
 
 	wp_enqueue_style(
-		'academia-course-filter',
+		'academia-wp-academia-course-filter',
 		academia_library_url() . 'assets/filter.css',
 		array(),
 		ACADEMIA_LIBRARY_VERSION
