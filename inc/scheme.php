@@ -57,14 +57,14 @@ function academia_scheme_assets() {
 	}
 
 	wp_enqueue_style(
-		'academia-wp-academia-scheme',
+		'academia-scheme',
 		get_theme_file_uri( 'assets/css/scheme.css' ),
 		array(),
 		ACADEMIA_VERSION
 	);
 
 	wp_enqueue_script(
-		'academia-wp-academia-scheme-toggle',
+		'academia-scheme-toggle',
 		get_theme_file_uri( 'assets/js/scheme-toggle.js' ),
 		array(),
 		ACADEMIA_VERSION,

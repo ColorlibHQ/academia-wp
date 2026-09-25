@@ -317,7 +317,7 @@ function academia_form_styles() {
 	}
 
 	wp_enqueue_style(
-		'academia-wp-academia-forms',
+		'academia-forms',
 		get_theme_file_uri( 'assets/css/forms.css' ),
 		array(),
 		ACADEMIA_VERSION
